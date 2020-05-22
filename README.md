@@ -12,7 +12,3 @@ Instructions only for Python3 on Mac. Run all in root directory.
 All resources from:
  - https://docs.google.com/spreadsheets/d/13d_LAJPlxMa_DubPTuirkIV4DERBMXbrWQsmSh8ReK4
  - https://github.com/NooksBazaar/google-sheets-to-json
-
-
-class A:
-  pass
