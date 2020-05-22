@@ -26,3 +26,19 @@ class Question(TypedDict):
     answers: List[Answer]
     generateSource: Optional[str]
     generateSourceCategory: Optional[str]
+
+
+class Villager(TypedDict)
+    name: str
+    profileImageUrl: str
+    houseImageUrl: str
+    species: str
+    gender: str
+    personality: str
+    hobby: str
+    birthday: str
+    catchphrase: str
+    song: str
+    song: str
+    color: List[str]
+    style: List[str]
