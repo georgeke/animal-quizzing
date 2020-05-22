@@ -2,8 +2,8 @@
   {
     "questionId": "1",
     "questionText":"How do you feel on Monday mornings?",
-    "questionType":"text",
-    "traitType":"personality",
+    "questionFormat":"text",
+    "villagerTrait":"personality",
     "answers":[
       {
         "text":"UGH, I don't even want to think about it",
@@ -42,8 +42,8 @@
   {
     "questionId": "2",
     "questionText":"Which statement best describes you?",
-    "questionType":"text",
-    "traitType":"personality",
+    "questionFormat":"text",
+    "villagerTrait":"personality",
     "answers":[
       {
         "text":"'I usually don't keep up with the latest trends'",
@@ -150,8 +150,8 @@
   {
     "questionId": "3",
     "questionText":"What would you prefer to do on a Saturday?",
-    "questionType":"text",
-    "traitType":"hobby",
+    "questionFormat":"text",
+    "villagerTrait":"hobby",
     "answers":[
       {
         "text":"Crack open a good book!",
@@ -206,8 +206,8 @@
   {
     "questionId": "4",
     "questionText":"What is/was your favourite of school?",
-    "questionType":"text",
-    "traitType":"hobby",
+    "questionFormat":"text",
+    "villagerTrait":"hobby",
     "answers":[
       {
         "text":"Learning new things",
@@ -262,8 +262,8 @@
   {
     "questionId": "5",
     "questionText":"Which game would you prefer to play?",
-    "questionType":"text",
-    "traitType":"hobby",
+    "questionFormat":"text",
+    "villagerTrait":"hobby",
     "answers":[
       {
         "text":"Scrabble",
@@ -318,141 +318,116 @@
   {
     "questionId": "6",
     "questionText":"Which of songs do you like more?",
-    "questionType":"audio",
-    "traitType":"song",
+    "questionFormat":"audio",
+    "villagerTrait":"song",
     "answers": [
       {
         "text": "",
-        "url": ""
+        "url": "",
+        "traitValue": "Steep Hill"
       }
     ]
   },
   {
     "questionId": "7",
     "questionText":"Which of these items would you prefer to have in your home?",
-    "questionType":"image",
-    "traitType":"color",
-    "generate": {
-      "type": "items",
-      "category": "Miscellaneous"
-    }
+    "questionFormat":"image",
+    "villagerTrait":"color",
+    "generateSource": "items",
+    "generateSourceCategory": "Miscellaneous"
   },
   {
     "questionId": "8",
     "questionText":"Which of these housewares would you prefer to have in your home?",
-    "questionType":"image",
-    "traitType":"color",
-    "generate": {
-      "type": "items",
-      "category": "Housewares"
-    }
+    "questionFormat":"image",
+    "villagerTrait":"color",
+    "generateSource": "items",
+    "generateSourceCategory": "Housewares"
   },
   {
     "questionId": "9",
     "questionText":"Which of these things would you hang on your wall?",
-    "questionType":"image",
-    "traitType":"color",
-    "generate": {
-      "type": "items",
-      "category": "Wall-mounted"
-    }
+    "questionFormat":"image",
+    "villagerTrait":"color",
+    "generateSource": "items",
+    "generateSourceCategory": "Wall-mounted"
   },
   {
     "questionId": "10",
     "questionText":"Which of these tops would you prefer to wear?",
-    "questionType":"image",
-    "traitType":"style",
-    "generate": {
-      "type": "items",
-      "category": "Tops"
-    }
+    "questionFormat":"image",
+    "villagerTrait":"style",
+    "generateSource": "items",
+    "generateSourceCategory": "Tops"
   },
   {
     "questionId": "11",
     "questionText":"Which of these bottoms would you prefer to wear?",
-    "questionType":"image",
-    "traitType":"style",
-    "generate": {
-      "type": "items",
-      "category": "Bottoms"
-    }
+    "questionFormat":"image",
+    "villagerTrait":"style",
+    "generateSource": "items",
+    "generateSourceCategory": "Bottoms"
   },
   {
     "questionId": "12",
     "questionText":"Which of these outfits would you prefer to wear?",
-    "questionType":"image",
-    "traitType":"style",
-    "generate": {
-      "type": "items",
-      "category": "Dress-Up"
-    }
+    "questionFormat":"image",
+    "villagerTrait":"style",
+    "generateSource": "items",
+    "generateSourceCategory": "Dress-up"
   },
   {
     "questionId": "13",
     "questionText":"Which of these headwears would you prefer to wear?",
-    "questionType":"image",
-    "traitType":"style",
-    "generate": {
-      "type": "items",
-      "category": "Headwear"
-    }
+    "questionFormat":"image",
+    "villagerTrait":"style",
+    "generateSource": "items",
+    "generateSourceCategory": "Headwear"
   },
   {
     "questionId": "14",
-    "questionText":"Which of these bags ttoms would you prefer to wear?",
-    "questionType":"image",
-    "traitType":"style",
-    "generate": {
-      "type": "items",
-      "category": "Bags"
-    }
+    "questionText":"Which of these bags would you prefer to wear?",
+    "questionFormat":"image",
+    "villagerTrait":"style",
+    "generateSource": "items",
+    "generateSourceCategory": "Bags"
   },
   {
     "questionId": "15",
     "questionText":"Which of these shoes would you prefer to wear?",
-    "questionType":"image",
-    "traitType":"style",
-    "generate": {
-      "type": "items",
-      "category": "Shoes"
-    }
+    "questionFormat":"image",
+    "villagerTrait":"style",
+    "generateSource": "items",
+    "generateSourceCategory": "Shoes"
   },
   {
     "questionId": "16",
     "questionText":"Which of these socks would you prefer to wear?",
-    "questionType":"image",
-    "traitType":"style",
-    "generate": {
-      "type": "items",
-      "category": "Socks"
-    }
+    "questionFormat":"image",
+    "villagerTrait":"style",
+    "generateSource": "items",
+    "generateSourceCategory": "Socks"
   },
   {
     "questionId": "17",
     "questionText":"Which of these umbrellas would you prefer to use?",
-    "questionType":"image",
-    "traitType":"style",
-    "generate": {
-      "type": "items",
-      "category": "Umbrellas"
-    }
+    "questionFormat":"image",
+    "villagerTrait":"style",
+    "generateSource": "items",
+    "generateSourceCategory": "Umbrellas"
   },
   {
     "questionId": "18",
     "questionText":"Which catchphrase do you like the most?",
-    "questionType":"image",
-    "traitType":"catchphrase",
-    "generate": {
-      "type": "catchphrase"
-    }
+    "questionFormat":"image",
+    "villagerTrait":"catchphrase",
+    "generateSource": "catchphrase"
   },
   {
     "questionId": "19",
     "questionText":"Which furniture do you like the most?",
-    "questionType":"image",
-    "traitType":"furniture",
-    "generate": {
-      "type": "items"
-    }
+    "questionFormat":"image",
+    "villagerTrait":"furniture",
+    "generateSource": "items"
   }
 ]
