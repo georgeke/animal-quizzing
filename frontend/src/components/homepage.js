@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import styled from '@emotion/styled';
+import axios from 'axios';
 
 import { ReactComponent as Leaf } from '../assets/icons/leaf.svg';
 import Button from './button';
@@ -22,13 +23,28 @@ const HomepageContainer = styled.div`
   margin-top: 200px;
 `;
 
-const Homepage = () => (
-  <HomepageContainer>
-    <Leaf width={270} height={270} />
-    <Title>Which villager are you?</Title>
-    <SubTitle>Animal Crossing: New Horizons</SubTitle>
-    <Button primary>Start</Button>
-  </HomepageContainer>
-);
+const Homepage = ({ setAnswers, setQuestion }) => {
+  const onStartClick = useCallback(() => {
+    // TODO: replace with actual url
+    axios.get('http://localhost:4321/question', {
+      answers: [],
+    })
+    .then((response) => {
+      const { data } = response;
+
+      setAnswers(data.answers);
+      setQuestion(data.nextQuestion);
+    });
+  });
+
+  return (
+    <HomepageContainer>
+      <Leaf width={270} height={270} />
+      <Title>Which villager are you?</Title>
+      <SubTitle>Animal Crossing: New Horizons</SubTitle>
+      <Button onClick={onStartClick} primary>Start</Button>
+    </HomepageContainer>
+  );
+}
 
 export default Homepage;
