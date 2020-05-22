@@ -1,18 +1,28 @@
 from enum import Enum
-from typing import List, TypedDict
+from typing import List, Optional, TypedDict
 
 
-class TraitType(Enum):
+class VillagerTrait(Enum):
+    CATCHPHRASE = "catchphrase"
+    COLOR = "color"
+    FURNITURE = "furniture"
+    HOBBY = "hobby"
     PERSONALITY = "personality"
+    SONG = "song"
+    STYLE = "style"
 
 
 class Answer(TypedDict):
     text: str
     url: str
-    trait_value: str  # TODO: change to enum?
+    villagerTrait: str  # TODO: change to enum?
 
 
-class QuestionType(TypedDict):
-    text: str
-    trait_type: TraitType
+class Question(TypedDict):
+    questionId: str
+    questionText: str
+    questionFormat: str
+    villagerTrait: VillagerTrait
     answers: List[Answer]
+    generateSource: Optional[str]
+    generateSourceCategory: Optional[str]
