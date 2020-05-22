@@ -1,9 +1,10 @@
 import json
 
 from models import Answer, Question, VillagerTrait
+from typing import Sequence
 
 
-def load_questions():
+def load_questions() -> Sequence[Question]:
     with open("../db/questions.json") as f:
         data = json.load(f)
 
@@ -29,3 +30,4 @@ def load_questions():
                 generateSourceCategory=question_data.get("generateSourceCategory"),
             )
         )
+    return question_types
