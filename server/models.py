@@ -1,21 +1,18 @@
-from dataclasses import dataclass
 from enum import Enum
-from typing import List
+from typing import List, TypedDict
 
 
 class TraitType(Enum):
     PERSONALITY = "personality"
 
 
-@dataclass
-class Answer:
+class Answer(TypedDict):
     text: str
+    url: str
     trait_value: str  # TODO: change to enum?
 
 
-@dataclass
-class QuestionType:
+class QuestionType(TypedDict):
     text: str
     trait_type: TraitType
-    score: int
     answers: List[Answer]
