@@ -2,18 +2,19 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 import { ReactComponent as Leaf } from '../assets/icons/leaf.svg';
-
+import Button from './button';
 
 const Title = styled.div`
   font-size: 55px;
   font-weight: 400;
   font-style: italic;
-  margin-top: 40px;
+  margin-top: 60px;
   margin-bottom: 20px;
 `;
 
 const SubTitle = styled.div`
-  font-size: 20px;
+  font-size: 23px;
+  margin-bottom: 60px;
 `;
 
 const HomepageContainer = styled.div`
@@ -31,9 +32,10 @@ const HomepageLayout = styled.div`
 const Homepage = () => (
   <HomepageLayout>
     <HomepageContainer>
-      <Leaf width={230} height={230} />
+      <Leaf width={260} height={260} />
       <Title>Which villager are you?</Title>
-      <SubTitle>from Animal Crossing: New Horizons</SubTitle>
+      <SubTitle>Animal Crossing: New Horizons</SubTitle>
+      <Button>Start</Button>
     </HomepageContainer>
   </HomepageLayout>
 );
