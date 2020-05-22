@@ -1,0 +1,439 @@
+[
+  {
+    "questionText":"How do you feel on Monday mornings?",
+    "questionType":"text",
+    "traitType":"personality",
+    "answers":[
+      {
+        "text":"UGH, I don't even want to think about it",
+        "traitValue":"Cranky"
+      },
+      {
+        "text":"Ready to wake up and go for my morning run!",
+        "traitValue":"Jock"
+      },
+      {
+        "text":"Sleepy, I need my beauty rest",
+        "traitValue":"Lazy"
+      },
+      {
+        "text":"Well you know me, I'm always ready to tackle the day",
+        "traitValue":"Smug"
+      },
+      {
+        "text":"Excited to pick out my outfit, you know I'm gonna look good!",
+        "traitValue":"Snooty"
+      },
+      {
+        "text":"Yay! Let's get the day started",
+        "traitValue":"Peppy"
+      },
+      {
+        "text":"I feel fine, just another Monday",
+        "traitValue":"Normal"
+      },
+      {
+        "text":"Monday's suck, but you gotta do what you gotta do",
+        "traitValue":"Sisterly"
+      }
+    ]
+  },
+  {
+    "questionText":"Which statement best describes you?",
+    "questionType":"text",
+    "traitType":"personality",
+    "answers":[
+      {
+        "text":"'I usually don't keep up with the latest trends'",
+        "traitValue":"Cranky"
+      },
+      {
+        "text":"'I often get upset over seemingly small things'",
+        "traitValue":"Cranky"
+      },
+      {
+        "text":"'I am protective of my close friends'",
+        "traitValue":"Cranky"
+      },
+      {
+        "text":"'I like to hear gossip about people I know'",
+        "traitValue":"Cranky"
+      },
+      {
+        "text":"'I workout on a consistent basis'",
+        "traitValue":"Jock"
+      },
+      {
+        "text":"'I care about maintaining a good physique'",
+        "traitValue":"Jock"
+      },
+      {
+        "text":"'I can get pretty competitive'",
+        "traitValue":"Jock"
+      },
+      {
+        "text":"'I consider eating a hobby'",
+        "traitValue":"Lazy"
+      },
+      {
+        "text":"'I spend a lot of time in bed'",
+        "traitValue":"Lazy"
+      },
+      {
+        "text":"'I don't get stressed easily'",
+        "traitValue":"Lazy"
+      },
+      {
+        "text":"'I generally have good manners'",
+        "traitValue":"Smug"
+      },
+      {
+        "text":"'I think I'm better than most people I know'",
+        "traitValue":"Smug"
+      },
+      {
+        "text":"'I cringe when someone is clearly wrong about something'",
+        "traitValue":"Smug"
+      },
+      {
+        "text":"'I get angry easier than most people'",
+        "traitValue":"Snooty"
+      },
+      {
+        "text":"'I find it hard to get along with people who aren't similar to me'",
+        "traitValue":"Snooty"
+      },
+      {
+        "text":"'I like the finer things in life'",
+        "traitValue":"Snooty"
+      },
+      {
+        "text":"'I am very expressive when I'm excited'",
+        "traitValue":"Peppy"
+      },
+      {
+        "text":"'Some people might find me too energetic'",
+        "traitValue":"Peppy"
+      },
+      {
+        "text":"'I have grand aspirations in life'",
+        "traitValue":"Peppy"
+      },
+      {
+        "text":"'I sometimes feel a lack of self worth'",
+        "traitValue":"Normal"
+      },
+      {
+        "text":"'I'm considered the father or mother in my friend circles'",
+        "traitValue":"Normal"
+      },
+      {
+        "text":"'I find it easy to get along with anyone I meet'",
+        "traitValue":"Normal"
+      },
+      {
+        "text":"'I can be very blunt'",
+        "traitValue":"Sisterly"
+      },
+      {
+        "text":"'I'm very empathetic towards my friends'",
+        "traitValue":"Sisterly"
+      },
+      {
+        "text":"'Some people find me rude at first, but deep down I'm kind'",
+        "traitValue":"Sisterly"
+      }
+    ]
+  },
+  {
+    "questionText":"What would you prefer to do on a Saturday?",
+    "questionType":"text",
+    "traitType":"hobby",
+    "answers":[
+      {
+        "text":"Crack open a good book!",
+        "traitValue":"Education"
+      },
+      {
+        "text":"Visit my favourite museum",
+        "traitValue":"Education"
+      },
+      {
+        "text":"Online shopping for my next outfit!",
+        "traitValue":"Fashion"
+      },
+      {
+        "text":"Window shopping for clothes at the mall",
+        "traitValue":"Fashion"
+      },
+      {
+        "text":"Doing some yoga",
+        "traitValue":"Fitness"
+      },
+      {
+        "text":"Running outside",
+        "traitValue":"Fitness"
+      },
+      {
+        "text":"Taking a dance class",
+        "traitValue":"Music"
+      },
+      {
+        "text":"Karaoke with friends!",
+        "traitValue":"Music"
+      },
+      {
+        "text":"Have a picnic in the local park",
+        "traitValue":"Nature"
+      },
+      {
+        "text":"Tend to my plants",
+        "traitValue":"Nature"
+      },
+      {
+        "text":"Play board games with friends!",
+        "traitValue":"Play"
+      },
+      {
+        "text":"Build a LEGO set",
+        "traitValue":"Play"
+      }
+    ]
+  },
+  {
+    "questionText":"What is/was your favourite of school?",
+    "questionType":"text",
+    "traitType":"hobby",
+    "answers":[
+      {
+        "text":"Learning new things",
+        "traitValue":"Education"
+      },
+      {
+        "text":"Reading textbooks",
+        "traitValue":"Education"
+      },
+      {
+        "text":"Picking out my outfit in the morning",
+        "traitValue":"Fashion"
+      },
+      {
+        "text":"Seeing what everyone is wearing at school",
+        "traitValue":"Fashion"
+      },
+      {
+        "text":"Gym class! Duh",
+        "traitValue":"Fitness"
+      },
+      {
+        "text":"Playing sports during recess!",
+        "traitValue":"Fitness"
+      },
+      {
+        "text":"Playing an instrument!",
+        "traitValue":"Music"
+      },
+      {
+        "text":"Listening to music instead of paying attention in class",
+        "traitValue":"Music"
+      },
+      {
+        "text":"Sitting on the grass during recess",
+        "traitValue":"Nature"
+      },
+      {
+        "text":"Biology class!",
+        "traitValue":"Nature"
+      },
+      {
+        "text":"Playing tag with friends at recess",
+        "traitValue":"Play"
+      },
+      {
+        "text":"Clowning around during class",
+        "traitValue":"Play"
+      }
+    ]
+  },
+  {
+    "questionText":"Which game would you prefer to play?",
+    "questionType":"text",
+    "traitType":"hobby",
+    "answers":[
+      {
+        "text":"Scrabble",
+        "traitValue":"Education"
+      },
+      {
+        "text":"Trivial Pursuit",
+        "traitValue":"Education"
+      },
+      {
+        "text":"The Sims",
+        "traitValue":"Fashion"
+      },
+      {
+        "text":"Any video game where I can customize my character",
+        "traitValue":"Fashion"
+      },
+      {
+        "text":"Wii Sports",
+        "traitValue":"Fitness"
+      },
+      {
+        "text":"NBA 2K",
+        "traitValue":"Fitness"
+      },
+      {
+        "text":"JustDance!",
+        "traitValue":"Music"
+      },
+      {
+        "text":"Guitar Hero",
+        "traitValue":"Music"
+      },
+      {
+        "text":"Animal Crossing",
+        "traitValue":"Nature"
+      },
+      {
+        "text":"Minecraft",
+        "traitValue":"Nature"
+      },
+      {
+        "text":"Fortnite",
+        "traitValue":"Play"
+      },
+      {
+        "text":"Super Mario",
+        "traitValue":"Play"
+      }
+    ]
+  },
+  {
+    "questionText":"Which of songs do you like more?",
+    "questionType":"audio",
+    "traitType":"song",
+    "answers": [
+      {
+        "text": "",
+        "url": ""
+      }
+    ]
+  },
+  {
+    "questionText":"Which of these items would you prefer to have in your home?",
+    "questionType":"image",
+    "traitType":"color",
+    "generate": {
+      "type": "items",
+      "category": "Miscellaneous"
+    }
+  },
+  {
+    "questionText":"Which of these housewares would you prefer to have in your home?",
+    "questionType":"image",
+    "traitType":"color",
+    "generate": {
+      "type": "items",
+      "category": "Housewares"
+    }
+  },
+  {
+    "questionText":"Which of these things would you hang on your wall?",
+    "questionType":"image",
+    "traitType":"color",
+    "generate": {
+      "type": "items",
+      "category": "Wall-mounted"
+    }
+  },
+  {
+    "questionText":"Which of these tops would you prefer to wear?",
+    "questionType":"image",
+    "traitType":"style",
+    "generate": {
+      "type": "items",
+      "category": "Tops"
+    }
+  },
+  {
+    "questionText":"Which of these bottoms would you prefer to wear?",
+    "questionType":"image",
+    "traitType":"style",
+    "generate": {
+      "type": "items",
+      "category": "Bottoms"
+    }
+  },
+  {
+    "questionText":"Which of these outfits would you prefer to wear?",
+    "questionType":"image",
+    "traitType":"style",
+    "generate": {
+      "type": "items",
+      "category": "Dress-Up"
+    }
+  },
+  {
+    "questionText":"Which of these headwears would you prefer to wear?",
+    "questionType":"image",
+    "traitType":"style",
+    "generate": {
+      "type": "items",
+      "category": "Headewear"
+    }
+  },
+  {
+    "questionText":"Which of these bags ttoms would you prefer to wear?",
+    "questionType":"image",
+    "traitType":"style",
+    "generate": {
+      "type": "items",
+      "category": "Bags"
+    }
+  },
+  {
+    "questionText":"Which of these shoes would you prefer to wear?",
+    "questionType":"image",
+    "traitType":"style",
+    "generate": {
+      "type": "items",
+      "category": "Shoes"
+    }
+  },
+  {
+    "questionText":"Which of these socks would you prefer to wear?",
+    "questionType":"image",
+    "traitType":"style",
+    "generate": {
+      "type": "items",
+      "category": "Socks"
+    }
+  },
+  {
+    "questionText":"Which of these umbrellas would you prefer to use?",
+    "questionType":"image",
+    "traitType":"style",
+    "generate": {
+      "type": "items",
+      "category": "Umbrellas"
+    }
+  },
+  {
+    "questionText":"Which catchphrase do you like the most?",
+    "questionType":"image",
+    "traitType":"catchphrase",
+    "generate": {
+      "type": "catchphrase"
+    }
+  },
+  {
+    "questionText":"Which furniture do you like the most?",
+    "questionType":"image",
+    "traitType":"furniture",
+    "generate": {
+      "type": "items"
+    }
+  }
+]
