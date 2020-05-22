@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from '@emotion/styled';
 
 import Homepage from './components/homepage';
@@ -11,10 +11,28 @@ const AppContainer = styled.div`
   margin-left: auto;
 `;
 
-const App = () => (
-  <AppContainer>
-    <Homepage />
-  </AppContainer>
-);
+const App = () => {
+  const [answers, setAnswers] = useState(null);
+  const [question, setQuestion] = useState(null);
+
+  let component;
+
+  if (question && answers) {
+    component = <QuestionPage question={question} />
+  } else {
+    component = (
+      <Homepage
+        setAnswers={setAnswers}
+        setQuestion={setQuestion}
+      />
+    );
+  }
+
+  return (
+    <AppContainer>
+      {component}
+    </AppContainer>
+  );
+};
 
 export default App;
