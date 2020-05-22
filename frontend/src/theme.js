@@ -8,7 +8,6 @@ export default {
       teaDark: '#B8C8A5',
       leaf: '#24A901',
       green: '#88D18A',
-      greenDark: '#5B8B5C',
     },
     gray: [
       '#f8f9fa', // 0

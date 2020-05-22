@@ -8,13 +8,13 @@ const Title = styled.div`
   font-size: 55px;
   font-weight: 400;
   font-style: italic;
-  margin-top: 60px;
+  margin-top: 85px;
   margin-bottom: 20px;
 `;
 
 const SubTitle = styled.div`
-  font-size: 23px;
-  margin-bottom: 60px;
+  font-size: 24px;
+  margin-bottom: 55px;
 `;
 
 const HomepageContainer = styled.div`
@@ -22,22 +22,13 @@ const HomepageContainer = styled.div`
   margin-top: 200px;
 `;
 
-const HomepageLayout = styled.div`
-  max-width: 960px;
-  min-width: 720px;
-  margin-right: auto;
-  margin-left: auto;
-`;
-
 const Homepage = () => (
-  <HomepageLayout>
-    <HomepageContainer>
-      <Leaf width={260} height={260} />
-      <Title>Which villager are you?</Title>
-      <SubTitle>Animal Crossing: New Horizons</SubTitle>
-      <Button>Start</Button>
-    </HomepageContainer>
-  </HomepageLayout>
+  <HomepageContainer>
+    <Leaf width={270} height={270} />
+    <Title>Which villager are you?</Title>
+    <SubTitle>Animal Crossing: New Horizons</SubTitle>
+    <Button primary>Start</Button>
+  </HomepageContainer>
 );
 
 export default Homepage;
