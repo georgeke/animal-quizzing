@@ -1,3 +1,20 @@
 .DS_Store
+
+# backend bits
 venv/*
 __pycache__
+
+# frontend dependencies
+/frontend/node_modules
+/frontend/.pnp
+/frontend/.pnp.js
+
+# frontend testing
+/frontend/coverage
+
+# frontend production
+/frontend/build
+
+/frontend/npm-debug.log*
+/frontend/yarn-debug.log*
+/frontend/yarn-error.log*
