@@ -1,4 +1,4 @@
-from flask import Flask, make_response, request
+from flask import Flask, Response, request
 from loader import load_question_blueprints
 from models import Question
 from typing import Any, Dict
@@ -9,6 +9,7 @@ app = Flask(__name__)
 @app.route("/question", methods=["POST", "GET"])
 def question() -> Dict[str, Any]:
     user_answers_data = request.get_json()
+    print(user_answers_data)
     questions = load_question_blueprints()
     question = Question(
         questionId=questions[0]["questionId"],
@@ -17,6 +18,12 @@ def question() -> Dict[str, Any]:
         villagerTrait=questions[0]["villagerTrait"],
         answers=questions[0]["answers"][:4],
     )
-    response = make_response(question)
-    response.headers['Access-Control-Allow-Origin'] = '*'
+    return question
+
+@app.after_request
+def update_cors(response: Response):
+    response.headers.add("Access-Control-Allow-Origin", "http://localhost:3000")
+    response.headers.add("Access-Control-Allow-Headers", "Content-Type,Authorization")
+    response.headers.add("Access-Control-Allow-Methods", "GET,POST")
+    response.headers.add("Access-Control-Allow-Credentials", "true")
     return response
