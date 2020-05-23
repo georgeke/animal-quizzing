@@ -68,8 +68,8 @@ def load_villagers() -> Sequence[Villager]:
             birthday=villager_data["birthday"],
             catchphrase=villager_data["catchphrase"],
             song=villager_data["favoriteSong"],
-            color=villager_data["colors"],
-            style=villager_data["styles"],
+            colors=villager_data["colors"],
+            styles=villager_data["styles"],
         )
         for villager_data in data
     ]

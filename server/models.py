@@ -45,5 +45,5 @@ class Villager(TypedDict):
     birthday: str
     catchphrase: str
     song: str
-    color: List[str]
-    style: List[str]
+    colors: List[str]
+    styles: List[str]
