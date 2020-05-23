@@ -2,6 +2,7 @@
 
 # backend bits
 venv/*
+.mypy_cache/*
 __pycache__
 
 # frontend dependencies
