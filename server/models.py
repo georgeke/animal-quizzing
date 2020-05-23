@@ -1,15 +1,4 @@
-from enum import Enum
 from typing import List, Optional, TypedDict
-
-
-class VillagerTrait(Enum):
-    CATCHPHRASE = "catchphrase"
-    COLOR = "color"
-    FURNITURE = "furniture"
-    HOBBY = "hobby"
-    PERSONALITY = "personality"
-    SONG = "song"
-    STYLE = "style"
 
 
 class Answer(TypedDict):
@@ -22,7 +11,7 @@ class Question(TypedDict):
     questionId: str
     questionText: str
     questionFormat: str
-    villagerTrait: VillagerTrait
+    villagerTrait: str
     answers: List[Answer]
     generateSource: Optional[str]
     generateSourceCategory: Optional[str]

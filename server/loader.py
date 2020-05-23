@@ -1,11 +1,11 @@
 import json
 
-from models import Answer, Question, Villager, VillagerTrait
+from models import Answer, Question, Villager
 from typing import Sequence
 
 
 def load_questions() -> Sequence[Question]:
-    with open("../db/questions.json") as f:
+    with open("db/questions.json") as f:
         data = json.load(f)
 
     question_types = []
@@ -24,7 +24,7 @@ def load_questions() -> Sequence[Question]:
                 questionId=question_data["questionId"],
                 questionText=question_data["questionText"],
                 questionFormat=question_data["questionFormat"],
-                villagerTrait=VillagerTrait(question_data["villagerTrait"]),
+                villagerTrait=question_data["villagerTrait"],
                 answers=answers,
                 generateSource=question_data.get("generateSource"),
                 generateSourceCategory=question_data.get("generateSourceCategory"),
@@ -34,7 +34,7 @@ def load_questions() -> Sequence[Question]:
 
 
 def load_villagers() -> Sequence[Villager]:
-    with open("../db/villagers.json") as f:
+    with open("db/villagers.json") as f:
         data = json.load(f)
 
     return [
