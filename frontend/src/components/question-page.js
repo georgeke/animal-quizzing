@@ -67,7 +67,10 @@ const QuestionPage = ({
     currentAnswers,
     setAnswers,
     setQuestion,
-
+    questionId,
+    questionText,
+    questionFormat,
+    villagerTrait,
   ]);
 
   let answersComponent;
