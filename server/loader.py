@@ -1,10 +1,10 @@
 import json
 
-from models import Answer, Question, Villager
+from models import Answer, QuestionBlueprint, Villager
 from typing import Sequence
 
 
-def load_questions() -> Sequence[Question]:
+def load_question_blueprints() -> Sequence[QuestionBlueprint]:
     with open("db/questions.json") as f:
         data = json.load(f)
 
@@ -20,7 +20,7 @@ def load_questions() -> Sequence[Question]:
                 )
             )
         question_types.append(
-            Question(
+            QuestionBlueprint(
                 questionId=question_data["questionId"],
                 questionText=question_data["questionText"],
                 questionFormat=question_data["questionFormat"],
