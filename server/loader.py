@@ -4,7 +4,9 @@ from models import Answer, AnsweredQuestion, QuestionBlueprint, Villager
 from typing import Any, Dict, Sequence
 
 
-def load_answered_questions(data: Dict[str, Any]) -> Sequence[AnsweredQuestion]:
+def load_answered_questions(
+    data: Sequence[Dict[str, Any]]
+) -> Sequence[AnsweredQuestion]:
     return [
         QuestionBlueprint(
             questionId=question_data["questionId"],
