@@ -28,7 +28,7 @@ class Question(TypedDict):
     generateSourceCategory: Optional[str]
 
 
-class Villager(TypedDict)
+class Villager(TypedDict):
     name: str
     profileImageUrl: str
     houseImageUrl: str
