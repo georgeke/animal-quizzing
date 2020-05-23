@@ -23,7 +23,8 @@ const TextAnswer = styled.span`
 `;
 
 const IconContainer = styled.div`
-  opacity: 0;
+  opacity: ${(props) => props.active ? '1' : '0'};
+  transition: ease 200ms;
 
   ${AnswerContainer}:hover & {
     opacity: 1;
@@ -31,14 +32,14 @@ const IconContainer = styled.div`
 `;
 
 
-const TextAnswers = ({ answerOptions, onAnswerClick }) => (
+const TextAnswers = ({ answerOptions, onAnswerClick, activeAnswer }) => (
   <AnswersContainer>
     {answerOptions.map((answer) => (
       <AnswerContainer
         key={answer.text}
         onClick={() => onAnswerClick(answer)}
       >
-        <IconContainer>
+        <IconContainer active={answer === activeAnswer}>
           <Leaf width={30} height={30} />
         </IconContainer>
         <TextAnswer>{answer.text}</TextAnswer>
@@ -52,4 +53,5 @@ export default TextAnswers;
 TextAnswers.propTypes = {
   answerOptions: PropTypes.array.isRequired,
   onAnswerClick: PropTypes.func.isRequired,
+  activeAnswer: PropTypes.shape({}).isRequired,
 };

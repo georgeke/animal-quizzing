@@ -81,6 +81,7 @@ const QuestionPage = ({
       <TextAnswers
         answerOptions={answers}
         onAnswerClick={setActiveAnswer}
+        activeAnswer={activeAnswer}
       />
     );
   }
