@@ -1,3 +1,5 @@
+import random
+
 from flask import Flask, Response, request
 from loader import load_question_blueprints
 from models import Question
@@ -9,8 +11,8 @@ app = Flask(__name__)
 @app.route("/question", methods=["POST", "GET"])
 def question() -> Dict[str, Any]:
     user_answers_data = request.get_json()
-    print(user_answers_data)
     questions = load_question_blueprints()
+    random.shuffle(questions[0]["answers"])
     question = Question(
         questionId=questions[0]["questionId"],
         questionText=questions[0]["questionText"],
@@ -18,7 +20,10 @@ def question() -> Dict[str, Any]:
         villagerTrait=questions[0]["villagerTrait"],
         answers=questions[0]["answers"][:4],
     )
-    return question
+    return {
+        "answers": user_answers_data["answers"],
+        "nextQuestion": question,
+    }
 
 @app.after_request
 def update_cors(response: Response):
