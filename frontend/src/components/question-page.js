@@ -46,7 +46,9 @@ const QuestionPage = ({
       villagerTrait,
       answer: activeAnswer,
     };
-    const newAnswers = currentAnswers.push(newAnswer);
+
+    const newAnswers = currentAnswers;
+    newAnswers.push(newAnswer);
 
     // TODO: replace with actual url
     axios.post('http://localhost:4321/question2', {
