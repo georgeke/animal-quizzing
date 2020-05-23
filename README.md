@@ -10,7 +10,7 @@ Backend: (Run all in root directory)
  - Set environment variable for development (auto refresh and better stacktraces): `export FLASK_ENV=development`
  - Start the server on `http://127.0.0.1:5000/`: `flask run`
  
-Front-End (Run in frontend directory):
+Frontend (Run in frontend directory):
  - Install [Node](https://nodejs.org/en/download/)
  - Install all package dependancies: `yarn`
  - Start server: `yarn start`
