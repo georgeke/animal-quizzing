@@ -12,7 +12,7 @@ Backend: (Run all in root directory)
  
 Frontend (Run in frontend directory):
  - Install [Node](https://nodejs.org/en/download/)
- - Install all package dependancies: `yarn`
+ - Install all package dependencies: `yarn`
  - Start server: `yarn start`
 
 ## Misc
