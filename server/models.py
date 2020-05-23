@@ -4,7 +4,7 @@ from typing import List, Optional, TypedDict
 class Answer(TypedDict):
     text: Optional[str]
     url: Optional[str]
-    villagerTrait: str  # TODO: change to enum?
+    traitValue: str  # TODO: change to enum?
 
 
 class QuestionBase(TypedDict):

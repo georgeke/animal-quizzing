@@ -1,7 +1,24 @@
 import json
 
-from models import Answer, QuestionBlueprint, Villager
-from typing import Sequence
+from models import Answer, AnsweredQuestion, QuestionBlueprint, Villager
+from typing import Any, Dict, Sequence
+
+
+def load_answered_questions(data: Dict[str, Any]) -> Sequence[AnsweredQuestion]:
+    return [
+        QuestionBlueprint(
+            questionId=question_data["questionId"],
+            questionText=question_data["questionText"],
+            questionFormat=question_data["questionFormat"],
+            villagerTrait=question_data["villagerTrait"],
+            answer=Answer(
+                text=question_data["answer"].get("text"),
+                url=question_data["answer"].get("url"),
+                traitValue=question_data["answer"]["traitValue"],
+            ),
+        )
+        for question_data in data
+    ]
 
 
 def load_question_blueprints() -> Sequence[QuestionBlueprint]:
@@ -16,7 +33,7 @@ def load_question_blueprints() -> Sequence[QuestionBlueprint]:
                 Answer(
                     text=answer_data.get("text"),
                     url=answer_data.get("url"),
-                    trait_value=answer_data["traitValue"],
+                    traitValue=answer_data["traitValue"],
                 )
             )
         question_types.append(
