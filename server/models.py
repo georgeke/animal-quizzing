@@ -2,8 +2,8 @@ from typing import List, Optional, TypedDict
 
 
 class Answer(TypedDict):
-    text: str
-    url: str
+    text: Optional[str]
+    url: Optional[str]
     villagerTrait: str  # TODO: change to enum?
 
 
