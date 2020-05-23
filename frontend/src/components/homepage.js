@@ -1,4 +1,5 @@
-import React, { useCallback } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 import axios from 'axios';
 
@@ -24,9 +25,9 @@ const HomepageContainer = styled.div`
 `;
 
 const Homepage = ({ setAnswers, setQuestion }) => {
-  const onStartClick = useCallback(() => {
+  const onStartClick = () => {
     // TODO: replace with actual url
-    axios.get('http://localhost:4321/question', {
+    axios.post('http://localhost:4321/question', {
       answers: [],
     })
     .then((response) => {
@@ -34,8 +35,11 @@ const Homepage = ({ setAnswers, setQuestion }) => {
 
       setAnswers(data.answers);
       setQuestion(data.nextQuestion);
+    })
+    .catch((error) => {
+      console.log(error);
     });
-  });
+  };
 
   return (
     <HomepageContainer>
@@ -48,3 +52,8 @@ const Homepage = ({ setAnswers, setQuestion }) => {
 }
 
 export default Homepage;
+
+Homepage.propTypes = {
+  setAnswers: PropTypes.func.isRequired,
+  setQuestion: PropTypes.func.isRequired,
+}

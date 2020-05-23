@@ -53,6 +53,13 @@ const Button = styled.button`
       background: ${theme.colors.green.leaf};
     }
   `}
+
+  &[disabled] {
+    color: ${theme.colors.gray[6]};
+    border-color: ${theme.colors.gray[2]};
+    cursor: default;
+    pointer-events: none;
+  }
 `;
 
 export default Button;
