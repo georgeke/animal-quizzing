@@ -51,7 +51,7 @@ const QuestionPage = ({
     newAnswers.push(newAnswer);
 
     // TODO: replace with actual url
-    axios.post('http://localhost:4321/question2', {
+    axios.post('http://localhost:5000/question', {
       answers: newAnswers,
     })
     .then((response) => {
