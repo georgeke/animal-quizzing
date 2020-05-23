@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import emotion from 'emotion';
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 
 import { ReactComponent as Leaf } from '../assets/icons/leaf.svg';
 
@@ -26,7 +25,7 @@ const TextAnswer = styled.span`
 const IconContainer = styled.div`
   opacity: 0;
 
-  &:hover {
+  ${AnswerContainer}:hover & {
     opacity: 1;
   }
 `;
