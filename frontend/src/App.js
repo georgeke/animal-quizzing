@@ -18,7 +18,14 @@ const App = () => {
   let component;
 
   if (question && answers) {
-    component = <QuestionPage question={question} />
+    component = (
+      <QuestionPage
+        question={question}
+        currentAnswers={answers}
+        setAnswers={setAnswers}
+        setQuestion={setQuestion}
+      />
+    );
   } else {
     component = (
       <Homepage
