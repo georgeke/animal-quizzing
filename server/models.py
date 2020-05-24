@@ -47,3 +47,14 @@ class Villager(TypedDict):
     song: str
     colors: List[str]
     styles: List[str]
+
+
+class ItemVariant(TypedDict):
+    imageUrl: str
+    colors: List[str]
+
+
+class Item(TypedDict):
+    category: str
+    name: str
+    variants: List[ItemVariant]
