@@ -419,7 +419,7 @@
   {
     "questionId": "18",
     "questionText":"Which catchphrase do you like the most?",
-    "questionFormat":"image",
+    "questionFormat":"text",
     "villagerTrait":"catchphrase",
     "generateSource": "catchphrase"
   },
