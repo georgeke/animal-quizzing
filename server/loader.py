@@ -1,7 +1,14 @@
 import json
 
-from models import Answer, AnsweredQuestion, Item, ItemVariant, QuestionBlueprint, Villager
-from typing import Any, Dict, Mapping, Sequence
+from models import (
+    Answer,
+    AnsweredQuestion,
+    Item,
+    ItemVariant,
+    QuestionBlueprint,
+    Villager,
+)
+from typing import Any, Dict, List, Mapping, Sequence
 
 
 ITEM_CATEGORY_BLACKLIST = ["Other", "Music"]
@@ -82,7 +89,7 @@ def load_items() -> Mapping[str, Sequence[Item]]:
     with open("db/items.json") as f:
         data = json.load(f)
 
-    items_map = {}
+    items_map: Dict[str, List[Item]] = {}
     for items_data in data:
         category = items_data["sourceSheet"]
         if category in ITEM_CATEGORY_BLACKLIST:
@@ -98,17 +105,8 @@ def load_items() -> Mapping[str, Sequence[Item]]:
             if not image_url:
                 raise ValueError(f"Expected a image url for item {name}")
 
-            variants.append(
-                ItemVariant(
-                    imageUrl=image_url,
-                    colors=variant["colors"],
-                )
-            )
+            variants.append(ItemVariant(imageUrl=image_url, colors=variant["colors"],))
         items_map[category].append(
-            Item(
-                category=category,
-                name=name,
-                variants=variants,
-            )
+            Item(category=category, name=name, variants=variants,)
         )
     return items_map
