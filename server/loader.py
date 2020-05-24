@@ -1,7 +1,10 @@
 import json
 
-from models import Answer, AnsweredQuestion, QuestionBlueprint, Villager
-from typing import Any, Dict, Sequence
+from models import Answer, AnsweredQuestion, Item, ItemVariant, QuestionBlueprint, Villager
+from typing import Any, Dict, Mapping, Sequence
+
+
+ITEM_CATEGORY_BLACKLIST = ["Other", "Music"]
 
 
 def load_answered_questions(
@@ -73,3 +76,39 @@ def load_villagers() -> Sequence[Villager]:
         )
         for villager_data in data
     ]
+
+
+def load_items() -> Mapping[str, Sequence[Item]]:
+    with open("db/items.json") as f:
+        data = json.load(f)
+
+    items_map = {}
+    for items_data in data:
+        category = items_data["sourceSheet"]
+        if category in ITEM_CATEGORY_BLACKLIST:
+            continue
+
+        if category not in items_map:
+            items_map[category] = []
+
+        variants = []
+        name = items_data["name"]
+        for variant in items_data["variants"]:
+            image_url = variant.get("image") or variant.get("closetImage")
+            if not image_url:
+                raise ValueError(f"Expected a image url for item {name}")
+
+            variants.append(
+                ItemVariant(
+                    imageUrl=image_url,
+                    colors=variant["colors"],
+                )
+            )
+        items_map[category].append(
+            Item(
+                category=category,
+                name=name,
+                variants=variants,
+            )
+        )
+    return items_map
