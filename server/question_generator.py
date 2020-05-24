@@ -1,6 +1,6 @@
 import random
 
-from models import AnsweredQuestion, Question, QuestionBlueprint, Villager
+from models import Answer, AnsweredQuestion, Question, QuestionBlueprint, Villager
 from loader import load_villagers
 from typing import Optional, Sequence
 
@@ -16,7 +16,7 @@ def generate_filter_question(
 
     question_blueprint = _get_question_blueprint_with_id(questions, question_id)
 
-    if question_blueprint.get("generatedSource"):
+    if question_blueprint.get("generateSource"):
         question = _get_generated_question_from_question_blueprint(
             question_blueprint, load_villagers()
         )
@@ -37,10 +37,10 @@ def generate_score_question(
     questions: Sequence[QuestionBlueprint], answers: Sequence[AnsweredQuestion],
 ) -> Question:
     # for now, just return song question
-    question_blueprint = _get_question_blueprint_with_id(questions, "6")
+    question_blueprint = _get_question_blueprint_with_id(questions, "18")
     print(question_blueprint)
 
-    if question_blueprint.get("generatedSource"):
+    if question_blueprint.get("generateSource"):
         question = _get_generated_question_from_question_blueprint(
             question_blueprint, load_villagers()
         )
@@ -80,4 +80,25 @@ def _get_question_blueprint_with_id(
 def _get_generated_question_from_question_blueprint(
     blueprint: QuestionBlueprint, villagers: Sequence[Villager],
 ) -> Optional[Question]:
+    source = blueprint["generateSource"]
+    answers = None
+    random.shuffle(villagers)
+
+    if source == "catchphrase":
+        answers = [
+            Answer(
+                text=f"\"{villager['catchphrase']}\"",
+                traitValue=villager["catchphrase"],
+            )
+            for villager in villagers[:4]
+        ]
+
+    if answers:
+        return Question(
+            questionId=blueprint["questionId"],
+            questionText=blueprint["questionText"],
+            questionFormat=blueprint["questionFormat"],
+            villagerTrait=blueprint["villagerTrait"],
+            answers=answers,
+        )
     return None
