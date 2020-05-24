@@ -205,7 +205,7 @@
   },
   {
     "questionId": "4",
-    "questionText":"What is/was your favourite of school?",
+    "questionText":"What is/was your favourite part of school?",
     "questionFormat":"text",
     "villagerTrait":"hobby",
     "answers":[
