@@ -1,6 +1,13 @@
 import json
 
-from models import Answer, AnsweredQuestion, Item, ItemVariant, QuestionBlueprint, Villager
+from models import (
+    Answer,
+    AnsweredQuestion,
+    Item,
+    ItemVariant,
+    QuestionBlueprint,
+    Villager,
+)
 from typing import Any, Dict, Mapping, Sequence
 
 
@@ -98,17 +105,8 @@ def load_items() -> Mapping[str, Sequence[Item]]:
             if not image_url:
                 raise ValueError(f"Expected a image url for item {name}")
 
-            variants.append(
-                ItemVariant(
-                    imageUrl=image_url,
-                    colors=variant["colors"],
-                )
-            )
+            variants.append(ItemVariant(imageUrl=image_url, colors=variant["colors"],))
         items_map[category].append(
-            Item(
-                category=category,
-                name=name,
-                variants=variants,
-            )
+            Item(category=category, name=name, variants=variants,)
         )
     return items_map
