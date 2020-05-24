@@ -26,6 +26,25 @@ def generate_filter_question(
     )
 
 
+def generate_score_question(
+    questions: Sequence[QuestionBlueprint],
+    answers: Sequence[AnsweredQuestion],
+) -> Question:
+    # for now, just return song question
+    question_blueprint = _get_question_with_id(questions, "6")
+    print(question_blueprint)
+
+    # TODO: check here if question has generateSource
+    random.shuffle(question_blueprint["answers"])
+    return Question(
+        questionId=question_blueprint["questionId"],
+        questionText=question_blueprint["questionText"],
+        questionFormat=question_blueprint["questionFormat"],
+        villagerTrait=question_blueprint["villagerTrait"],
+        answers=question_blueprint["answers"][:4],
+    )
+
+
 def _get_question_id_not_used(
     question_ids: Sequence[str], answers: Sequence[AnsweredQuestion]
 ) -> str:
