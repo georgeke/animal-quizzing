@@ -11,7 +11,7 @@ def load_answered_questions(
     data: Sequence[Dict[str, Any]]
 ) -> Sequence[AnsweredQuestion]:
     return [
-        QuestionBlueprint(
+        AnsweredQuestion(
             questionId=question_data["questionId"],
             questionText=question_data["questionText"],
             questionFormat=question_data["questionFormat"],
