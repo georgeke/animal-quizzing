@@ -317,7 +317,7 @@
   },
   {
     "questionId": "6",
-    "questionText":"Which of songs do you like more?",
+    "questionText":"Listen to the following songs. Which do you prefer?",
     "questionFormat":"audio",
     "villagerTrait":"song",
     "answers": [
