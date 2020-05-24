@@ -1,7 +1,7 @@
 import random
 
 from models import Question, QuestionBlueprint, AnsweredQuestion
-from typing import Sequence
+from typing import Optional, Sequence
 
 
 def generate_filter_question(
@@ -15,7 +15,11 @@ def generate_filter_question(
 
     question_blueprint = _get_question_with_id(questions, question_id)
 
-    # TODO: check here if question has generateSource
+    if question_blueprint.get("generatedSource"):
+        question = _get_generated_question_from_question_blueprint(question_blueprint)
+        if question:
+            return question
+
     random.shuffle(question_blueprint["answers"])
     return Question(
         questionId=question_blueprint["questionId"],
@@ -34,7 +38,11 @@ def generate_score_question(
     question_blueprint = _get_question_with_id(questions, "6")
     print(question_blueprint)
 
-    # TODO: check here if question has generateSource
+    if question_blueprint.get("generatedSource"):
+        question = _get_generated_question_from_question_blueprint(question_blueprint)
+        if question:
+            return question
+
     random.shuffle(question_blueprint["answers"])
     return Question(
         questionId=question_blueprint["questionId"],
@@ -57,9 +65,16 @@ def _get_question_id_not_used(
                 return question_id
 
 
-def _get_question_with_id(
+def _get_question_blueprint_with_id(
     questions: Sequence[QuestionBlueprint], id: str
 ) -> QuestionBlueprint:
     for question in questions:
         if question["questionId"] == id:
             return question
+
+
+def _get_generated_question_from_question_blueprint(
+    blueprint: QuestionBlueprint,
+    villagers: Optional[Sequence[Villager]],
+) -> Optional[Question]:
+    return None
