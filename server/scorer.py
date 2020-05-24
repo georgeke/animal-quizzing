@@ -1,24 +1,34 @@
 from models import AnsweredQuestion, Villager
-from typing import Sequence
+from typing import Dict, Mapping, Set, Sequence
 
 
 def filter_villagers(
     villagers: Sequence[Villager], answered_questions: Sequence[AnsweredQuestion]
 ) -> Sequence[Villager]:
-    filtered_villagers = villagers
+    trait_to_trait_values: Dict[str, Set[str]] = {}
     for question in answered_questions:
-        filtered_villagers = [
-            villager
-            for villager in filtered_villagers
-            if _filter_villager_with_single_question(villager, question)
-        ]
-    return list(filtered_villagers)
+        trait = question["villagerTrait"]
+        if trait not in trait_to_trait_values:
+            trait_to_trait_values[trait] = set()
+
+        trait_to_trait_values[trait].add(trait)
+
+    return [
+        villager
+        for villager in villagers
+        if _filter_villager_with_trait_map(villager, trait_to_trait_values)
+    ]
 
 
-def _filter_villager_with_single_question(
-    villager: Villager, question: AnsweredQuestion
+def _filter_villager_with_trait_map(
+    villager: Villager, trait_to_trait_values: Mapping[str, Set[str]]
 ) -> bool:
-    villager_trait = question["villagerTrait"]
-    if villager_trait in ("color", "styles"):
-        return question["answer"]["traitValue"] in villager[villager_trait]
-    return question["answer"]["traitValue"] == villager[villager_trait]
+    for trait, trait_values in trait_to_trait_values.items():
+        is_filtered = False
+        if trait in ("color", "styles"):
+            is_filtered = villager[trait] & trait_values  # type: ignore
+        is_filtered = villager[trait] in trait_values  # type: ignore
+
+        if is_filtered:
+            return False
+    return True

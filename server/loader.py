@@ -8,7 +8,7 @@ from models import (
     QuestionBlueprint,
     Villager,
 )
-from typing import Any, Dict, Mapping, Sequence
+from typing import Any, Dict, List, Mapping, Sequence
 
 
 ITEM_CATEGORY_BLACKLIST = ["Other", "Music"]
@@ -89,7 +89,7 @@ def load_items() -> Mapping[str, Sequence[Item]]:
     with open("db/items.json") as f:
         data = json.load(f)
 
-    items_map = {}
+    items_map: Dict[str, List[Item]] = {}
     for items_data in data:
         category = items_data["sourceSheet"]
         if category in ITEM_CATEGORY_BLACKLIST:
