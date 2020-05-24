@@ -1,6 +1,7 @@
 import random
 
-from models import Question, QuestionBlueprint, AnsweredQuestion
+from models import AnsweredQuestion, Question, QuestionBlueprint, Villager
+from loader import load_villagers
 from typing import Optional, Sequence
 
 
@@ -16,7 +17,9 @@ def generate_filter_question(
     question_blueprint = _get_question_with_id(questions, question_id)
 
     if question_blueprint.get("generatedSource"):
-        question = _get_generated_question_from_question_blueprint(question_blueprint)
+        question = _get_generated_question_from_question_blueprint(
+            question_blueprint, load_villagers()
+        )
         if question:
             return question
 
@@ -31,15 +34,16 @@ def generate_filter_question(
 
 
 def generate_score_question(
-    questions: Sequence[QuestionBlueprint],
-    answers: Sequence[AnsweredQuestion],
+    questions: Sequence[QuestionBlueprint], answers: Sequence[AnsweredQuestion],
 ) -> Question:
     # for now, just return song question
     question_blueprint = _get_question_with_id(questions, "6")
     print(question_blueprint)
 
     if question_blueprint.get("generatedSource"):
-        question = _get_generated_question_from_question_blueprint(question_blueprint)
+        question = _get_generated_question_from_question_blueprint(
+            question_blueprint, load_villagers()
+        )
         if question:
             return question
 
@@ -74,7 +78,6 @@ def _get_question_blueprint_with_id(
 
 
 def _get_generated_question_from_question_blueprint(
-    blueprint: QuestionBlueprint,
-    villagers: Optional[Sequence[Villager]],
+    blueprint: QuestionBlueprint, villagers: Sequence[Villager],
 ) -> Optional[Question]:
     return None
