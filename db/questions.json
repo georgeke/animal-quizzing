@@ -322,8 +322,28 @@
     "villagerTrait":"song",
     "answers": [
       {
-        "text": "",
-        "url": "",
+        "text": "KK Bubblegum",
+        "url": "song.com/url",
+        "traitValue": "Steep Hill"
+      },
+      {
+        "text": "KK Cruisin",
+        "url": "song.com/url",
+        "traitValue": "Steep Hill"
+      },
+      {
+        "text": "Soulful KK",
+        "url": "song.com/url",
+        "traitValue": "Steep Hill"
+      },
+      {
+        "text": "KK Pop",
+        "url": "song.com/url",
+        "traitValue": "Steep Hill"
+      },
+      {
+        "text": "KK Hip Hop",
+        "url": "song.com/url",
         "traitValue": "Steep Hill"
       }
     ]
