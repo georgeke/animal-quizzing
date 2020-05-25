@@ -46,103 +46,103 @@
     "villagerTrait":"personality",
     "answers":[
       {
-        "text":"'I usually don't keep up with the latest trends'",
+        "text":"\"I usually don't keep up with the latest trends\"",
         "traitValue":"Cranky"
       },
       {
-        "text":"'I often get upset over seemingly small things'",
+        "text":"\"I often get upset over seemingly small things\"",
         "traitValue":"Cranky"
       },
       {
-        "text":"'I am protective of my close friends'",
+        "text":"\"I am protective of my close friends\"",
         "traitValue":"Cranky"
       },
       {
-        "text":"'I like to hear gossip about people I know'",
+        "text":"\"I like to hear gossip about people I know\"",
         "traitValue":"Cranky"
       },
       {
-        "text":"'I workout on a consistent basis'",
+        "text":"\"I workout on a consistent basis\"",
         "traitValue":"Jock"
       },
       {
-        "text":"'I care about maintaining a good physique'",
+        "text":"\"I care about maintaining a good physique\"",
         "traitValue":"Jock"
       },
       {
-        "text":"'I can get pretty competitive'",
+        "text":"\"I can get pretty competitive\"",
         "traitValue":"Jock"
       },
       {
-        "text":"'I consider eating a hobby'",
+        "text":"\"I consider eating a hobby\"",
         "traitValue":"Lazy"
       },
       {
-        "text":"'I spend a lot of time in bed'",
+        "text":"\"I spend a lot of time in bed\"",
         "traitValue":"Lazy"
       },
       {
-        "text":"'I don't get stressed easily'",
+        "text":"\"I don't get stressed easily\"",
         "traitValue":"Lazy"
       },
       {
-        "text":"'I generally have good manners'",
+        "text":"\"I generally have good manners\"",
         "traitValue":"Smug"
       },
       {
-        "text":"'I think I'm better than most people I know'",
+        "text":"\"I think I'm better than most people I know\"",
         "traitValue":"Smug"
       },
       {
-        "text":"'I cringe when someone is clearly wrong about something'",
+        "text":"\"I cringe when someone is clearly wrong about something\"",
         "traitValue":"Smug"
       },
       {
-        "text":"'I get angry easier than most people'",
+        "text":"\"I get angry easier than most people\"",
         "traitValue":"Snooty"
       },
       {
-        "text":"'I find it hard to get along with people who aren't similar to me'",
+        "text":"\"I find it hard to get along with people who aren't similar to me\"",
         "traitValue":"Snooty"
       },
       {
-        "text":"'I like the finer things in life'",
+        "text":"\"I like the finer things in life\"",
         "traitValue":"Snooty"
       },
       {
-        "text":"'I am very expressive when I'm excited'",
+        "text":"\"I am very expressive when I'm excited\"",
         "traitValue":"Peppy"
       },
       {
-        "text":"'Some people might find me too energetic'",
+        "text":"\"Some people might find me too energetic\"",
         "traitValue":"Peppy"
       },
       {
-        "text":"'I have grand aspirations in life'",
+        "text":"\"I have grand aspirations in life\"",
         "traitValue":"Peppy"
       },
       {
-        "text":"'I sometimes feel a lack of self worth'",
+        "text":"\"I sometimes feel a lack of self worth\"",
         "traitValue":"Normal"
       },
       {
-        "text":"'I'm considered the father or mother in my friend circles'",
+        "text":"\"I'm considered the father or mother in my friend circles\"",
         "traitValue":"Normal"
       },
       {
-        "text":"'I find it easy to get along with anyone I meet'",
+        "text":"\"I find it easy to get along with anyone I meet\"",
         "traitValue":"Normal"
       },
       {
-        "text":"'I can be very blunt'",
+        "text":"\"I can be very blunt\"",
         "traitValue":"Sisterly"
       },
       {
-        "text":"'I'm very empathetic towards my friends'",
+        "text":"\"I'm very empathetic towards my friends\"",
         "traitValue":"Sisterly"
       },
       {
-        "text":"'Some people find me rude at first, but deep down I'm kind'",
+        "text":"\"Some people find me rude at first, but deep down I'm kind\"",
         "traitValue":"Sisterly"
       }
     ]
@@ -424,10 +424,10 @@
         "traitValue": "DJ K.K."
       },
       {
-        "text": "K.K. Cruisin'",
+        "text": "K.K. Cruisin\"",
         "imageUrl": "https://acnhcdn.com/latest/Audio/mjk_Urban.png",
         "audioUrl": "/song?name=K.K.%20Cruisin%27",
-        "traitValue": "K.K. Cruisin'"
+        "traitValue": "K.K. Cruisin\""
       },
       {
         "text": "K.K. March",
