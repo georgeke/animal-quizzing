@@ -84,7 +84,16 @@ def _get_question_from_question_blueprint(blueprint: QuestionBlueprint) -> Quest
     if blueprint["questionFormat"] == "audio":
         answers = blueprint["answers"][:2]
     else:
-        answers = blueprint["answers"][:4]
+        answers = []
+        trait_value_set = set()
+        for answer in blueprint["answers"]:
+            trait_value = answer["traitValue"]
+            if trait_value not in trait_value_set:
+                trait_value_set.add(trait_value)
+                answers.append(answer)
+            if len(trait_value_set) == 4:
+                break
+        assert(len(answers), 4)
 
     return Question(
         questionId=blueprint["questionId"],
