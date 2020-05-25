@@ -19,6 +19,7 @@ const AnswerContainer = styled.a`
 const ImageAnswer = styled.span`
   font-size: 20px;
   margin-left: 20px;
+  max-width: 100px;
 `;
 
 
