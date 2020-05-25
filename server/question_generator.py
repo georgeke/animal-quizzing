@@ -5,11 +5,17 @@ from loader import load_items, load_villagers
 from typing import Optional, List, Sequence
 
 
+HARDCODED_TEXT_QUESTION_IDS = ["1", "2", "3", "4", "5"]
+HARDCODED_AUDIO_QUESTION_IDS = ["6"]
+GENERATED_COLOR_QUESTION_IDS = ["7", "8", "9"]
+GENERATED_CLOTHING_QUESTION_IDS = ["10", "11", "12", "13", "14", "15", "16", "17"]
+GENERATED_MISC_QUESTION_IDS = ["18", "19"]
+
+
 def generate_filter_question(
     questions: Sequence[QuestionBlueprint], answers: Sequence[AnsweredQuestion]
 ) -> Question:
-    filter_question_ids = ["6"]  # ["1", "2", "3", "4", "5"]
-    # TODO: also add "10", "11", "12", "13", "14", "15", "16", "17"
+    filter_question_ids = list(HARDCODED_TEXT_QUESTION_IDS + GENERATED_COLOR_QUESTION_IDS)
 
     random.shuffle(filter_question_ids)
     question_id = _get_question_id_not_used(filter_question_ids, answers)
@@ -29,9 +35,12 @@ def generate_filter_question(
 def generate_score_question(
     questions: Sequence[QuestionBlueprint], answers: Sequence[AnsweredQuestion],
 ) -> Question:
-    # for now, just return song question
-    question_blueprint = _get_question_blueprint_with_id(questions, "18")
-    print(question_blueprint)
+    scoring_question_ids = list(HARDCODED_TEXT_QUESTION_IDS + HARDCODED_AUDIO_QUESTION_IDS + ["18"])
+
+    random.shuffle(scoring_question_ids)
+    question_id = _get_question_id_not_used(scoring_question_ids, answers)
+
+    question_blueprint = _get_question_blueprint_with_id(questions, question_id)
 
     if question_blueprint.get("generateSource"):
         question = _get_generated_question_from_question_blueprint(
