@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 const AnswersContainer = styled.div`
   margin-top: 60px;
-  margin-bottom: 60px;
+  margin-bottom: 120px;
   display: flex;
   justify-content: space-around;
 `;
