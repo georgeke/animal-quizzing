@@ -1,10 +1,13 @@
-from flask import Flask, Response, request
+import os
+
+from flask import Flask, Response, request, send_file
 from loader import load_question_blueprints, load_villagers, load_answered_questions
 from models import Question, Villager, QuestionBlueprint, AnsweredQuestion
 from question_generator import generate_filter_question, generate_score_question
 from typing import Any, Dict, Sequence
 
 app = Flask(__name__)
+SONGS_DIR = "db/songs"
 
 
 @app.route("/question", methods=["POST", "GET"])
@@ -23,6 +26,22 @@ def question() -> Dict[str, Any]:
         "answers": current_answers,
         "nextQuestion": question,
     }
+
+
+@app.route("/song", methods=["GET"])
+def song() -> Response:
+    song = request.args.get("name")
+    print(os.listdir(SONGS_DIR))
+    all_songs = [f.split(".mp3")[0] for f in os.listdir(SONGS_DIR)]
+    if song not in all_songs:
+        return Response("Invalid song name", status=400)
+
+    return send_file(
+        f"../{SONGS_DIR}/{song}.mp3",
+        mimetype="audio/mpeg",
+        as_attachment=True,
+        attachment_filename=f"{song}.mp3",
+    )
 
 
 @app.after_request
