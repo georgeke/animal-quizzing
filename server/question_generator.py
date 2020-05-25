@@ -8,7 +8,7 @@ from typing import Optional, List, Sequence
 def generate_filter_question(
     questions: Sequence[QuestionBlueprint], answers: Sequence[AnsweredQuestion]
 ) -> Question:
-    filter_question_ids = ["7"]  # ["1", "2", "3", "4", "5"]
+    filter_question_ids = ["6"]  # ["1", "2", "3", "4", "5"]
     # TODO: also add "10", "11", "12", "13", "14", "15", "16", "17"
 
     random.shuffle(filter_question_ids)

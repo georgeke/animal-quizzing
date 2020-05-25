@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 import axios from 'axios';
 
+import AudioAnswers from './audio-answers';
 import ImageAnswers from './image-answers';
 import TextAnswers from './text-answers';
 import Button from './button';
@@ -87,6 +88,14 @@ const QuestionPage = ({
   } else if (questionFormat === 'image') {
     answersComponent = (
       <ImageAnswers
+        answerOptions={answers}
+        onAnswerClick={setActiveAnswer}
+        activeAnswer={activeAnswer}
+      />
+    );
+  } else if (questionFormat === 'audio') {
+    answersComponent = (
+      <AudioAnswers
         answerOptions={answers}
         onAnswerClick={setActiveAnswer}
         activeAnswer={activeAnswer}

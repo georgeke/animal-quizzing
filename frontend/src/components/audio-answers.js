@@ -16,28 +16,39 @@ const AnswerContainer = styled.a`
   align-items: center;
 `;
 
-const ImageAnswer = styled.span`
+const AudioAnswer = styled.span`
+  font-size: 20px;
+  margin-left: 20px;
+`;
+
+const SongCover = styled.img`
+  max-width: 200px;
+`;
+
+const SongName = styled.span`
   font-size: 20px;
   margin-left: 20px;
 `;
 
 
-const ImageAnswers = ({ answerOptions, onAnswerClick, activeAnswer }) => (
+const AudioAnswers = ({ answerOptions, onAnswerClick, activeAnswer }) => (
   <AnswersContainer>
     {answerOptions.map((answer) => (
       <AnswerContainer
         key={answer.imageUrl}
-        onClick={() => onAnswerClick(answer)}
       >
-        <ImageAnswer><img src={answer.imageUrl} alt={answer.text} /></ImageAnswer>
+        <AudioAnswer>
+          <SongCover src={answer.imageUrl} alt={answer.text} />
+          <SongName onClick={() => onAnswerClick(answer)}>{answer.text}</SongName>
+        </AudioAnswer>
       </AnswerContainer>
     ))}
   </AnswersContainer>
 );
 
-export default ImageAnswers;
+export default AudioAnswers;
 
-ImageAnswers.propTypes = {
+AudioAnswers.propTypes = {
   answerOptions: PropTypes.array.isRequired,
   onAnswerClick: PropTypes.func.isRequired,
   activeAnswer: PropTypes.shape({}).isRequired,
