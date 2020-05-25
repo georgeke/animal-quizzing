@@ -31,7 +31,7 @@ def question() -> Dict[str, Any]:
 @app.route("/song", methods=["GET"])
 def song() -> Response:
     song = request.args.get("name")
-    print(os.listdir(SONGS_DIR))
+
     all_songs = [f.split(".mp3")[0] for f in os.listdir(SONGS_DIR)]
     if song not in all_songs:
         return Response("Invalid song name", status=400)

@@ -12,8 +12,7 @@ const AnswersContainer = styled.div`
   justify-content: center;
 `;
 
-const AnswerContainer = styled.a`
-  cursor: pointer;
+const AnswerContainer = styled.div`
   margin-top: 40px;
   margin-left: 40px;
   margin-right: 40px;
@@ -27,10 +26,15 @@ const SongCover = styled.img`
   margin-bottom: 20px
 `;
 
-const SongName = styled.div`
+const SongName = styled.a`
+  cursor: pointer;
   font-size: 30px;
   margin-left: 20px;
   margin-right: 70px;
+`;
+
+const SongPlayer = styled.audio`
+  margin-bottom: 20px;
 `;
 
 const IconContainer = styled.span`
@@ -51,6 +55,9 @@ const AudioAnswers = ({ answerOptions, onAnswerClick, activeAnswer }) => (
         key={answer.imageUrl}
       >
         <SongCover src={answer.imageUrl} alt={answer.text} />
+        <SongPlayer controls>
+          <source src={`http://localhost:5000${answer.audioUrl}`} type="audio/mpeg" />
+        </SongPlayer>
         <SongName onClick={() => onAnswerClick(answer)}>
           <IconContainer active={answer === activeAnswer}>
             <Leaf width={30} height={30} />
