@@ -26,10 +26,10 @@ const ImageAnswers = ({ answerOptions, onAnswerClick, activeAnswer }) => (
   <AnswersContainer>
     {answerOptions.map((answer) => (
       <AnswerContainer
-        key={answer.url}
+        key={answer.imageUrl}
         onClick={() => onAnswerClick(answer)}
       >
-        <ImageAnswer><img src={answer.url} alt={answer.text} /></ImageAnswer>
+        <ImageAnswer><img src={answer.imageUrl} alt={answer.text} /></ImageAnswer>
       </AnswerContainer>
     ))}
   </AnswersContainer>

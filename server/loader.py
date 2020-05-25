@@ -25,7 +25,8 @@ def load_answered_questions(
             villagerTrait=question_data["villagerTrait"],
             answer=Answer(
                 text=question_data["answer"].get("text"),
-                url=question_data["answer"].get("url"),
+                imageUrl=question_data["answer"].get("imageUrl"),
+                audioUrl=question_data["answer"].get("audioUrl"),
                 traitValue=question_data["answer"]["traitValue"],
             ),
         )
@@ -44,7 +45,8 @@ def load_question_blueprints() -> Sequence[QuestionBlueprint]:
             answers.append(
                 Answer(
                     text=answer_data.get("text"),
-                    url=answer_data.get("url"),
+                    imageUrl=answer_data.get("imageUrl"),
+                    audioUrl=answer_data.get("audioUrl"),
                     traitValue=answer_data["traitValue"],
                 )
             )

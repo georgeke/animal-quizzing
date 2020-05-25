@@ -63,10 +63,7 @@ def _get_question_id_not_used(
     if len(answers) == 0:
         return question_ids[0]
 
-    answer_ids = {
-        answer["questionId"]
-        for answer in answers
-    }
+    answer_ids = {answer["questionId"] for answer in answers}
 
     for question_id in question_ids:
         if question_id not in answer_ids:
@@ -94,7 +91,8 @@ def _get_generated_question_from_question_blueprint(
     if source == "catchphrase":
         answers = [
             Answer(
-                url=None,
+                imageUrl=None,
+                audioUrl=None,
                 text=f"\"{villager['catchphrase']}\"",
                 traitValue=villager["catchphrase"],
             )
@@ -136,7 +134,12 @@ def _generate_answers_for_non_clothing_items(
             if colors not in colors_set:
                 continue
             answers.append(
-                Answer(url=variant["imageUrl"], text=None, traitValue=list(colors))
+                Answer(
+                    imageUrl=variant["imageUrl"],
+                    audioUrl=None,
+                    text=None,
+                    traitValue=list(colors),
+                )
             )
             colors_set.remove(colors)
 

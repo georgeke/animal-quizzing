@@ -3,7 +3,8 @@ from typing import List, Optional, TypedDict, Union
 
 class Answer(TypedDict):
     text: Optional[str]
-    url: Optional[str]
+    imageUrl: Optional[str]
+    audioUrl: Optional[str]
     traitValue: Union[str, List[str]]
 
 
