@@ -7,7 +7,11 @@ from question_generator import generate_filter_question, generate_score_question
 from typing import Any, Dict, Sequence
 
 app = Flask(__name__)
+
+
 SONGS_DIR = "db/songs"
+NUM_FILTERED_QUESTIONS = 5
+NUM_TOTAL_QUESTIONS = 10
 
 
 @app.route("/question", methods=["POST", "GET"])
@@ -19,8 +23,10 @@ def question() -> Dict[str, Any]:
 
     if len(current_answers) < 5:
         question = generate_filter_question(questions, current_answers)
-    else:
+    elif len(current_answers) < 10:
         question = generate_score_question(questions, current_answers)
+    else:
+        return {}
 
     return {
         "answers": current_answers,

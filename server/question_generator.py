@@ -15,7 +15,9 @@ GENERATED_MISC_QUESTION_IDS = ["18", "19"]
 def generate_filter_question(
     questions: Sequence[QuestionBlueprint], answers: Sequence[AnsweredQuestion]
 ) -> Question:
-    filter_question_ids = list(HARDCODED_TEXT_QUESTION_IDS + GENERATED_COLOR_QUESTION_IDS)
+    filter_question_ids = list(
+        HARDCODED_TEXT_QUESTION_IDS + GENERATED_COLOR_QUESTION_IDS
+    )
 
     random.shuffle(filter_question_ids)
     question_id = _get_question_id_not_used(filter_question_ids, answers)
@@ -35,7 +37,9 @@ def generate_filter_question(
 def generate_score_question(
     questions: Sequence[QuestionBlueprint], answers: Sequence[AnsweredQuestion],
 ) -> Question:
-    scoring_question_ids = list(HARDCODED_TEXT_QUESTION_IDS + HARDCODED_AUDIO_QUESTION_IDS + ["18"])
+    scoring_question_ids = list(
+        HARDCODED_TEXT_QUESTION_IDS + HARDCODED_AUDIO_QUESTION_IDS + ["18"]
+    )
 
     random.shuffle(scoring_question_ids)
     question_id = _get_question_id_not_used(scoring_question_ids, answers)
