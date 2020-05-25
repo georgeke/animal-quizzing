@@ -23,14 +23,7 @@ def generate_filter_question(
         if question:
             return question
 
-    random.shuffle(question_blueprint["answers"])
-    return Question(
-        questionId=question_blueprint["questionId"],
-        questionText=question_blueprint["questionText"],
-        questionFormat=question_blueprint["questionFormat"],
-        villagerTrait=question_blueprint["villagerTrait"],
-        answers=question_blueprint["answers"][:4],
-    )
+    return _get_question_from_question_blueprint(question_blueprint)
 
 
 def generate_score_question(
@@ -47,14 +40,7 @@ def generate_score_question(
         if question:
             return question
 
-    random.shuffle(question_blueprint["answers"])
-    return Question(
-        questionId=question_blueprint["questionId"],
-        questionText=question_blueprint["questionText"],
-        questionFormat=question_blueprint["questionFormat"],
-        villagerTrait=question_blueprint["villagerTrait"],
-        answers=question_blueprint["answers"][:4],
-    )
+    return _get_question_from_question_blueprint(question_blueprint)
 
 
 def _get_question_id_not_used(
@@ -78,6 +64,22 @@ def _get_question_blueprint_with_id(
         if question["questionId"] == question_id:
             return question
     raise Exception()
+
+
+def _get_question_from_question_blueprint(blueprint: QuestionBlueprint) -> Question:
+    random.shuffle(blueprint["answers"])
+    if blueprint["questionFormat"] == "audio":
+        answers = blueprint["answers"][:2]
+    else:
+        answers = blueprint["answers"][:4]
+
+    return Question(
+        questionId=blueprint["questionId"],
+        questionText=blueprint["questionText"],
+        questionFormat=blueprint["questionFormat"],
+        villagerTrait=blueprint["villagerTrait"],
+        answers=answers,
+    )
 
 
 def _get_generated_question_from_question_blueprint(
