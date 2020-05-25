@@ -32,7 +32,6 @@ def generate_score_question(
 ) -> Question:
     # for now, just return song question
     question_blueprint = _get_question_with_id(questions, "6")
-    print(question_blueprint)
 
     # TODO: check here if question has generateSource
     random.shuffle(question_blueprint["answers"])
@@ -58,8 +57,9 @@ def _get_question_id_not_used(
 
 
 def _get_question_with_id(
-    questions: Sequence[QuestionBlueprint], id: str
+    questions: Sequence[QuestionBlueprint], question_id: str
 ) -> QuestionBlueprint:
     for question in questions:
-        if question["questionId"] == id:
+        if question["questionId"] == question_id:
             return question
+    raise Exception()
