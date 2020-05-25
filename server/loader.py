@@ -62,7 +62,7 @@ def load_question_blueprints() -> Sequence[QuestionBlueprint]:
     return question_types
 
 
-def load_villagers() -> Sequence[Villager]:
+def load_villagers() -> List[Villager]:
     with open("db/villagers.json") as f:
         data = json.load(f)
 
@@ -85,7 +85,7 @@ def load_villagers() -> Sequence[Villager]:
     ]
 
 
-def load_items() -> Mapping[str, Sequence[Item]]:
+def load_items() -> Mapping[str, List[Item]]:
     with open("db/items.json") as f:
         data = json.load(f)
 
