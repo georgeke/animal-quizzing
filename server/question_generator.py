@@ -1,14 +1,14 @@
 import random
 
 from models import Answer, AnsweredQuestion, Question, QuestionBlueprint, Villager
-from loader import load_villagers
-from typing import Optional, Sequence
+from loader import load_items, load_villagers
+from typing import Optional, List, Sequence
 
 
 def generate_filter_question(
     questions: Sequence[QuestionBlueprint], answers: Sequence[AnsweredQuestion]
 ) -> Question:
-    filter_question_ids = ["1", "2", "3", "4", "5"]
+    filter_question_ids = ["7"]  # ["1", "2", "3", "4", "5"]
     # TODO: also add "10", "11", "12", "13", "14", "15", "16", "17"
 
     random.shuffle(filter_question_ids)
@@ -78,20 +78,24 @@ def _get_question_blueprint_with_id(
 
 
 def _get_generated_question_from_question_blueprint(
-    blueprint: QuestionBlueprint, villagers: Sequence[Villager],
+    blueprint: QuestionBlueprint, villagers: List[Villager],
 ) -> Optional[Question]:
     source = blueprint["generateSource"]
-    answers = None
+    villager_trait = blueprint["villagerTrait"]
+    answers: Optional[List[Answer]] = None
     random.shuffle(villagers)
 
     if source == "catchphrase":
         answers = [
             Answer(
+                url=None,
                 text=f"\"{villager['catchphrase']}\"",
                 traitValue=villager["catchphrase"],
             )
             for villager in villagers[:4]
         ]
+    elif source == "items" and villager_trait == "color":
+        answers = _generate_answers_for_non_clothing_items(blueprint, villagers)
 
     if answers:
         return Question(
@@ -102,3 +106,35 @@ def _get_generated_question_from_question_blueprint(
             answers=answers,
         )
     return None
+
+
+def _generate_answers_for_non_clothing_items(
+    blueprint: QuestionBlueprint, villagers: List[Villager],
+) -> List[Answer]:
+    item_category = blueprint["generateSourceCategory"]
+    assert item_category
+    items = load_items()[item_category]
+    random.shuffle(items)
+
+    for item in items:
+        variants = item["variants"]
+        if len(variants) < 4:
+            continue
+        colors_set = set(tuple(v.get("colors", [])) for v in variants)
+        if len(colors_set) < 4:
+            continue
+
+        answers = []
+        for variant in variants:
+            colors = tuple(variant["colors"])
+            if colors not in colors_set:
+                continue
+            answers.append(
+                Answer(url=variant["imageUrl"], text=None, traitValue=list(colors))
+            )
+            colors_set.remove(colors)
+
+        return answers[:4]
+    raise ValueError(
+        f"Item category {item_category} has no items with 4 or more variants with different colors!"
+    )

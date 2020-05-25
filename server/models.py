@@ -1,10 +1,10 @@
-from typing import List, Optional, TypedDict
+from typing import List, Optional, TypedDict, Union
 
 
 class Answer(TypedDict):
     text: Optional[str]
     url: Optional[str]
-    traitValue: str  # TODO: change to enum?
+    traitValue: Union[str, List[str]]
 
 
 class QuestionBase(TypedDict):
