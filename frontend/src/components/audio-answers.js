@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
+import { ReactComponent as Leaf } from '../assets/icons/leaf.svg';
+
 
 const AnswersContainer = styled.div`
   margin-top: 60px;
@@ -25,9 +27,20 @@ const SongCover = styled.img`
   margin-bottom: 20px
 `;
 
-const SongName = styled.span`
+const SongName = styled.div`
   font-size: 30px;
   margin-left: 20px;
+  margin-right: 70px;
+`;
+
+const IconContainer = styled.span`
+  margin-right: 20px;
+  opacity: ${(props) => props.active ? '1' : '0'};
+  transition: ease 200ms;
+
+  ${SongName}:hover & {
+    opacity: 1;
+  }
 `;
 
 
@@ -38,7 +51,12 @@ const AudioAnswers = ({ answerOptions, onAnswerClick, activeAnswer }) => (
         key={answer.imageUrl}
       >
         <SongCover src={answer.imageUrl} alt={answer.text} />
-        <SongName onClick={() => onAnswerClick(answer)}>{answer.text}</SongName>
+        <SongName onClick={() => onAnswerClick(answer)}>
+          <IconContainer active={answer === activeAnswer}>
+            <Leaf width={30} height={30} />
+          </IconContainer>
+          {answer.text}
+        </SongName>
       </AnswerContainer>
     ))}
   </AnswersContainer>
