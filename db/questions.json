@@ -322,29 +322,304 @@
     "villagerTrait":"song",
     "answers": [
       {
-        "text": "KK Bubblegum",
-        "url": "song.com/url",
-        "traitValue": "Steep Hill"
+        "text": "K.K. Technopop",
+        "imageUrl": "https://acnhcdn.com/latest/Audio/mjk_TechnoBeat.png",
+        "audioUrl": "/song?name=K.K.%20Technopop",
+        "traitValue": "K.K. Technopop"
       },
       {
-        "text": "KK Cruisin",
-        "url": "song.com/url",
-        "traitValue": "Steep Hill"
+        "text": "Surfin' K.K.",
+        "imageUrl": "https://acnhcdn.com/latest/Audio/mjk_Eleki.png",
+        "audioUrl": "/song?name=Surfin%27%20K.K.",
+        "traitValue": "Surfin' K.K."
       },
       {
-        "text": "Soulful KK",
-        "url": "song.com/url",
-        "traitValue": "Steep Hill"
+        "text": "K.K. Calypso",
+        "imageUrl": "https://acnhcdn.com/latest/Audio/mjk_Caripso.png",
+        "audioUrl": "/song?name=K.K.%20Calypso",
+        "traitValue": "K.K. Calypso"
       },
       {
-        "text": "KK Pop",
-        "url": "song.com/url",
-        "traitValue": "Steep Hill"
+        "text": "K.K. Aria",
+        "imageUrl": "https://acnhcdn.com/latest/Audio/mjk_Maria.png",
+        "audioUrl": "/song?name=K.K.%20Aria",
+        "traitValue": "K.K. Aria"
       },
       {
-        "text": "KK Hip Hop",
-        "url": "song.com/url",
-        "traitValue": "Steep Hill"
+        "text": "K.K. Casbah",
+        "imageUrl": "https://acnhcdn.com/latest/Audio/mjk_Turkey.png",
+        "audioUrl": "/song?name=K.K.%20Casbah",
+        "traitValue": "K.K. Casbah"
+      },
+      {
+        "text": "K.K. Steppe",
+        "imageUrl": "https://acnhcdn.com/latest/Audio/mjk_Cossack.png",
+        "audioUrl": "/song?name=K.K.%20Steppe",
+        "traitValue": "K.K. Steppe"
+      },
+      {
+        "text": "K.K. Song",
+        "imageUrl": "https://acnhcdn.com/latest/Audio/mjk_KekeSong.png",
+        "audioUrl": "/song?name=K.K.%20Song",
+        "traitValue": "K.K. Song"
+      },
+      {
+        "text": "K.K. Soul",
+        "imageUrl": "https://acnhcdn.com/latest/Audio/mjk_Soul.png",
+        "audioUrl": "/song?name=K.K.%20Soul",
+        "traitValue": "K.K. Soul"
+      },
+      {
+        "text": "K.K. Salsa",
+        "imageUrl": "https://acnhcdn.com/latest/Audio/mjk_Salsa.png",
+        "audioUrl": "/song?name=K.K.%20Salsa",
+        "traitValue": "K.K. Salsa"
+      },
+      {
+        "text": "K.K. Gumbo",
+        "imageUrl": "https://acnhcdn.com/latest/Audio/mjk_NewOrleans.png",
+        "audioUrl": "/song?name=K.K.%20Gumbo",
+        "traitValue": "K.K. Gumbo"
+      },
+      {
+        "text": "Comrade K.K.",
+        "imageUrl": "https://acnhcdn.com/latest/Audio/mjk_ShowaKayo.png",
+        "audioUrl": "/song?name=Comrade%20K.K.",
+        "traitValue": "Comrade K.K."
+      },
+      {
+        "text": "The K. Funk",
+        "imageUrl": "https://acnhcdn.com/latest/Audio/mjk_Funk.png",
+        "audioUrl": "/song?name=The%20K.%20Funk",
+        "traitValue": "The K. Funk"
+      },
+      {
+        "text": "K.K. Faire",
+        "imageUrl": "https://acnhcdn.com/latest/Audio/mjk_Haisai.png",
+        "audioUrl": "/song?name=K.K.%20Faire",
+        "traitValue": "K.K. Faire"
+      },
+      {
+        "text": "K.K. Dirge",
+        "imageUrl": "https://acnhcdn.com/latest/Audio/mjk_KowaiUta.png",
+        "audioUrl": "/song?name=K.K.%20Dirge",
+        "traitValue": "K.K. Dirge"
+      },
+      {
+        "text": "Soulful K.K.",
+        "imageUrl": "https://acnhcdn.com/latest/Audio/mjk_Gospel.png",
+        "audioUrl": "/song?name=Soulful%20K.K.",
+        "traitValue": "Soulful K.K."
+      },
+      {
+        "text": "Two Days Ago",
+        "imageUrl": "https://acnhcdn.com/latest/Audio/mjk_Ototoi.png",
+        "audioUrl": "/song?name=Two%20Days%20Ago",
+        "traitValue": "Two Days Ago"
+      },
+      {
+        "text": "DJ K.K.",
+        "imageUrl": "https://acnhcdn.com/latest/Audio/mjk_EuroBeat.png",
+        "audioUrl": "/song?name=DJ%20K.K.",
+        "traitValue": "DJ K.K."
+      },
+      {
+        "text": "K.K. Cruisin'",
+        "imageUrl": "https://acnhcdn.com/latest/Audio/mjk_Urban.png",
+        "audioUrl": "/song?name=K.K.%20Cruisin%27",
+        "traitValue": "K.K. Cruisin'"
+      },
+      {
+        "text": "K.K. March",
+        "imageUrl": "https://acnhcdn.com/latest/Audio/mjk_March.png",
+        "audioUrl": "/song?name=K.K.%20March",
+        "traitValue": "K.K. March"
+      },
+      {
+        "text": "K.K. Rock",
+        "imageUrl": "https://acnhcdn.com/latest/Audio/mjk_Rock.png",
+        "audioUrl": "/song?name=K.K.%20Rock",
+        "traitValue": "K.K. Rock"
+      },
+      {
+        "text": "K.K. Ska",
+        "imageUrl": "https://acnhcdn.com/latest/Audio/mjk_Ska.png",
+        "audioUrl": "/song?name=K.K.%20Ska",
+        "traitValue": "K.K. Ska"
+      },
+      {
+        "text": "K.K. Safari",
+        "imageUrl": "https://acnhcdn.com/latest/Audio/mjk_Afro.png",
+        "audioUrl": "/song?name=K.K.%20Safari",
+        "traitValue": "K.K. Safari"
+      },
+      {
+        "text": "K.K. Condor",
+        "imageUrl": "https://acnhcdn.com/latest/Audio/mjk_Peru.png",
+        "audioUrl": "/song?name=K.K.%20Condor",
+        "traitValue": "K.K. Condor"
+      },
+      {
+        "text": "K.K. Chorale",
+        "imageUrl": "https://acnhcdn.com/latest/Audio/mjk_Sanbika.png",
+        "audioUrl": "/song?name=K.K.%20Chorale",
+        "traitValue": "K.K. Chorale"
+      },
+      {
+        "text": "K.K. Tango",
+        "imageUrl": "https://acnhcdn.com/latest/Audio/mjk_Tango.png",
+        "audioUrl": "/song?name=K.K.%20Tango",
+        "traitValue": "K.K. Tango"
+      },
+      {
+        "text": "K.K. Mambo",
+        "imageUrl": "https://acnhcdn.com/latest/Audio/mjk_Mambo.png",
+        "audioUrl": "/song?name=K.K.%20Mambo",
+        "traitValue": "K.K. Mambo"
+      },
+      {
+        "text": "K.K. Waltz",
+        "imageUrl": "https://acnhcdn.com/latest/Audio/mjk_Waltz.png",
+        "audioUrl": "/song?name=K.K.%20Waltz",
+        "traitValue": "K.K. Waltz"
+      },
+      {
+        "text": "K.K. Lullaby",
+        "imageUrl": "https://acnhcdn.com/latest/Audio/mjk_Lullaby.png",
+        "audioUrl": "/song?name=K.K.%20Lullaby",
+        "traitValue": "K.K. Lullaby"
+      },
+      {
+        "text": "K.K. Western",
+        "imageUrl": "https://acnhcdn.com/latest/Audio/mjk_Western.png",
+        "audioUrl": "/song?name=K.K.%20Western",
+        "traitValue": "K.K. Western"
+      },
+      {
+        "text": "K.K. Fusion",
+        "imageUrl": "https://acnhcdn.com/latest/Audio/mjk_Fusion.png",
+        "audioUrl": "/song?name=K.K.%20Fusion",
+        "traitValue": "K.K. Fusion"
+      },
+      {
+        "text": "K.K. Folk",
+        "imageUrl": "https://acnhcdn.com/latest/Audio/mjk_Minyo.png",
+        "audioUrl": "/song?name=K.K.%20Folk",
+        "traitValue": "K.K. Folk"
+      },
+      {
+        "text": "Only Me",
+        "imageUrl": "https://acnhcdn.com/latest/Audio/mjk_OnlyMe.png",
+        "audioUrl": "/song?name=Only%20Me",
+        "traitValue": "Only Me"
+      },
+      {
+        "text": "Rockin' K.K.",
+        "imageUrl": "https://acnhcdn.com/latest/Audio/mjk_RocknRoll.png",
+        "audioUrl": "/song?name=Rockin%27%20K.K.",
+        "traitValue": "Rockin' K.K."
+      },
+      {
+        "text": "K.K. Country",
+        "imageUrl": "https://acnhcdn.com/latest/Audio/mjk_Country.png",
+        "audioUrl": "/song?name=K.K.%20Country",
+        "traitValue": "K.K. Country"
+      },
+      {
+        "text": "Imperial K.K.",
+        "imageUrl": "https://acnhcdn.com/latest/Audio/mjk_China.png",
+        "audioUrl": "/song?name=Imperial%20K.K.",
+        "traitValue": "Imperial K.K."
+      },
+      {
+        "text": "Aloha K.K.",
+        "imageUrl": "https://acnhcdn.com/latest/Audio/mjk_Aloha.png",
+        "audioUrl": "/song?name=Aloha%20K.K.",
+        "traitValue": "Aloha K.K."
+      },
+      {
+        "text": "K.K. Blues",
+        "imageUrl": "https://acnhcdn.com/latest/Audio/mjk_Blues.png",
+        "audioUrl": "/song?name=K.K.%20Blues",
+        "traitValue": "K.K. Blues"
+      },
+      {
+        "text": "K.K. Reggae",
+        "imageUrl": "https://acnhcdn.com/latest/Audio/mjk_Reggae.png",
+        "audioUrl": "/song?name=K.K.%20Reggae",
+        "traitValue": "K.K. Reggae"
+      },
+      {
+        "text": "K.K. Jazz",
+        "imageUrl": "https://acnhcdn.com/latest/Audio/mjk_Jazz.png",
+        "audioUrl": "/song?name=K.K.%20Jazz",
+        "traitValue": "K.K. Jazz"
+      },
+      {
+        "text": "Mr. K.K.",
+        "imageUrl": "https://acnhcdn.com/latest/Audio/mjk_Sensei.png",
+        "audioUrl": "/song?name=Mr.%20K.K.",
+        "traitValue": "Mr. K.K."
+      },
+      {
+        "text": "Lucky K.K.",
+        "imageUrl": "https://acnhcdn.com/latest/Audio/mjk_Irish.png",
+        "audioUrl": "/song?name=Lucky%20K.K.",
+        "traitValue": "Lucky K.K."
+      },
+      {
+        "text": "K.K. Lament",
+        "imageUrl": "https://acnhcdn.com/latest/Audio/mjk_Enka.png",
+        "audioUrl": "/song?name=K.K.%20Lament",
+        "traitValue": "K.K. Lament"
+      },
+      {
+        "text": "K.K. Ballad",
+        "imageUrl": "https://acnhcdn.com/latest/Audio/mjk_Ballad.png",
+        "audioUrl": "/song?name=K.K.%20Ballad",
+        "traitValue": "K.K. Ballad"
+      },
+      {
+        "text": "I Love You",
+        "imageUrl": "https://acnhcdn.com/latest/Audio/mjk_Daisuki.png",
+        "audioUrl": "/song?name=I%20Love%20You",
+        "traitValue": "I Love You"
+      },
+      {
+        "text": "K.K. Parade",
+        "imageUrl": "https://acnhcdn.com/latest/Audio/mjk_Parade.png",
+        "audioUrl": "/song?name=K.K.%20Parade",
+        "traitValue": "K.K. Parade"
+      },
+      {
+        "text": "K.K. Swing",
+        "imageUrl": "https://acnhcdn.com/latest/Audio/mjk_Swing.png",
+        "audioUrl": "/song?name=K.K.%20Swing",
+        "traitValue": "K.K. Swing"
+      },
+      {
+        "text": "K.K. Love Song",
+        "imageUrl": "https://acnhcdn.com/latest/Audio/mjk_LoveSong.png",
+        "audioUrl": "/song?name=K.K.%20Love%20Song",
+        "traitValue": "K.K. Love Song"
+      },
+      {
+        "text": "K.K. Ragtime",
+        "imageUrl": "https://acnhcdn.com/latest/Audio/mjk_RagTime.png",
+        "audioUrl": "/song?name=K.K.%20Ragtime",
+        "traitValue": "K.K. Ragtime"
+      },
+      {
+        "text": "K.K. Samba",
+        "imageUrl": "https://acnhcdn.com/latest/Audio/mjk_Samba.png",
+        "audioUrl": "/song?name=K.K.%20Samba",
+        "traitValue": "K.K. Samba"
+      },
+      {
+        "text": "K.K. Bossa",
+        "imageUrl": "https://acnhcdn.com/latest/Audio/mjk_Bossa.png",
+        "audioUrl": "/song?name=K.K.%20Bossa",
+        "traitValue": "K.K. Bossa"
       }
     ]
   },
