@@ -63,18 +63,24 @@ def _get_question_id_not_used(
     if len(answers) == 0:
         return question_ids[0]
 
+    answer_ids = {
+        answer["questionId"]
+        for answer in answers
+    }
+
     for question_id in question_ids:
-        for answer in answers:
-            if answer["questionId"] != question_id:
-                return question_id
+        if question_id not in answer_ids:
+            return question_id
+    raise Exception()
 
 
 def _get_question_blueprint_with_id(
-    questions: Sequence[QuestionBlueprint], id: str
+    questions: Sequence[QuestionBlueprint], question_id: str
 ) -> QuestionBlueprint:
     for question in questions:
-        if question["questionId"] == id:
+        if question["questionId"] == question_id:
             return question
+    raise Exception()
 
 
 def _get_generated_question_from_question_blueprint(
