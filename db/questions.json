@@ -641,7 +641,7 @@
   },
   {
     "questionId": "9",
-    "questionText":"Which of these things would you hang on your wall?",
+    "questionText":"Which of these would you hang on your wall?",
     "questionFormat":"image",
     "villagerTrait":"colors",
     "generateSource": "items",
@@ -669,7 +669,7 @@
     "questionFormat":"image",
     "villagerTrait":"style",
     "generateSource": "items",
-    "generateSourceCategory": "Dress-up"
+    "generateSourceCategory": "Dress-Up"
   },
   {
     "questionId": "13",

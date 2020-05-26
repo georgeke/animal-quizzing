@@ -102,6 +102,7 @@ def load_items() -> Mapping[str, List[Item]]:
 
         variants = []
         name = items_data["name"]
+        style = items_data.get("style")
         for variant in items_data["variants"]:
             image_url = variant.get("image") or variant.get("closetImage")
             if not image_url:
@@ -109,6 +110,11 @@ def load_items() -> Mapping[str, List[Item]]:
 
             variants.append(ItemVariant(imageUrl=image_url, colors=variant["colors"],))
         items_map[category].append(
-            Item(category=category, name=name, variants=variants,)
+            Item(
+                category=category,
+                name=name,
+                variants=variants,
+                style=style,
+            )
         )
     return items_map
