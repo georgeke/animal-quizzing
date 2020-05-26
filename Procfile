@@ -1,1 +1,1 @@
-web: gunicorn --chdir ./server app:app
+web: export FLASK_APP=server/app.py && flask run
