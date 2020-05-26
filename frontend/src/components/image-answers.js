@@ -16,9 +16,9 @@ const AnswerContainer = styled.a`
   align-items: center;
 `;
 
-const ImageAnswer = styled.span`
-  font-size: 20px;
-  margin-left: 20px;
+const ImageAnswer = styled.img`
+  margin-left: 10px;
+  max-width: 100px;
 `;
 
 
@@ -29,7 +29,7 @@ const ImageAnswers = ({ answerOptions, onAnswerClick, activeAnswer }) => (
         key={answer.imageUrl}
         onClick={() => onAnswerClick(answer)}
       >
-        <ImageAnswer><img src={answer.imageUrl} alt={answer.text} /></ImageAnswer>
+        <ImageAnswer src={answer.imageUrl} alt={answer.text} />
       </AnswerContainer>
     ))}
   </AnswersContainer>
