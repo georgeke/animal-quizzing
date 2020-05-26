@@ -60,3 +60,6 @@ def update_cors(response: Response):
     response.headers.add("Access-Control-Allow-Methods", "GET,POST")
     response.headers.add("Access-Control-Allow-Credentials", "true")
     return response
+
+if __name__ == '__main__':
+    app.run()
