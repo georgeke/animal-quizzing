@@ -1,1 +1,1 @@
-web: cd frontend && yarn start
+web: flask run
