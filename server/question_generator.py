@@ -26,18 +26,17 @@ def generate_filter_question(
     question_id = _get_question_id_not_used(filter_question_ids, answers)
 
     question_blueprint = _get_question_blueprint_with_id(questions, question_id)
+    villagers = load_villagers()
 
     if question_blueprint.get("generateSource"):
-        question = _get_generated_question_from_question_blueprint(
-            question_blueprint, load_villagers()
-        )
+        question = _get_generated_question_from_question_blueprint(question_blueprint, villagers)
         if question:
             return question
         raise ValueError(
             f"No answers were generated for blueprint {question_blueprint}"
         )
 
-    return _get_question_from_question_blueprint(question_blueprint)
+    return _get_question_from_question_blueprint(question_blueprint, villagers)
 
 
 def generate_score_question(
@@ -54,10 +53,9 @@ def generate_score_question(
     question_id = _get_question_id_not_used(scoring_question_ids, answers)
 
     question_blueprint = _get_question_blueprint_with_id(questions, question_id)
+    filtered_villagers = filter_villagers(load_villagers(), answers)
 
     if question_blueprint.get("generateSource"):
-        filtered_villagers = filter_villagers(load_villagers(), answers)
-        print(len(filtered_villagers))
         question = _get_generated_question_from_question_blueprint(
             question_blueprint, filtered_villagers
         )
@@ -67,7 +65,7 @@ def generate_score_question(
             f"No answers were generated for blueprint {question_blueprint}"
         )
 
-    return _get_question_from_question_blueprint(question_blueprint)
+    return _get_question_from_question_blueprint(question_blueprint, filtered_villagers)
 
 
 def _get_question_id_not_used(
@@ -93,14 +91,37 @@ def _get_question_blueprint_with_id(
     raise Exception()
 
 
-def _get_question_from_question_blueprint(blueprint: QuestionBlueprint) -> Question:
-    random.shuffle(blueprint["answers"])
+def _get_question_from_question_blueprint(
+    blueprint: QuestionBlueprint, villagers: List[Villager],
+) -> Question:
+    answers = blueprint["answers"]
     if blueprint["questionFormat"] == "audio":
+        random.shuffle(answers)
         answers = blueprint["answers"][:2]
     else:
+        trait = blueprint["villagerTrait"]
+        villager_trait_values = set()
+        for v in villagers:
+            trait_value = v[trait]
+            if type(trait_value) is list:
+                villager_trait_values.update(trait_value)  # type: ignore
+            else:
+                villager_trait_values.add(trait_value)
+
+        answer_matches = []
+        answer_not_matches = []
+        for answer in answers:
+            if answer["traitValue"] in villager_trait_values:
+                answer_matches.append(answer)
+            else:
+                answer_not_matches.append(answer)
+
+        random.shuffle(answer_matches)
+        random.shuffle(answer_not_matches)
+
         answers = []
         trait_value_set = set()
-        for answer in blueprint["answers"]:
+        for answer in answer_matches + answer_not_matches:
             trait_value = answer["traitValue"]
             if trait_value not in trait_value_set:
                 trait_value_set.add(trait_value)
@@ -203,11 +224,25 @@ def _generate_answers_for_clothing_items(
     item_category = blueprint["generateSourceCategory"]
     assert item_category
     items = load_items()[item_category]
-    random.shuffle(items)
+
+    villager_styles = set()
+    for v in villagers:
+        villager_styles.update(v["styles"])
+
+    items_matching = []
+    items_not_matching = []
+    for item in items:
+        if item["style"] in villager_styles:
+            items_matching.append(item)
+        else:
+            items_not_matching.append(item)
+
+    random.shuffle(items_matching)
+    random.shuffle(items_not_matching)
 
     answers = []
     styles = set()
-    for item in items:
+    for item in items_matching + items_not_matching:
         style = item["style"]
         assert style
 
