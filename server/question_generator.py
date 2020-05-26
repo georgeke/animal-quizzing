@@ -204,7 +204,7 @@ def _generate_answers_for_clothing_items(
     random.shuffle(items)
 
     answers = []
-    styles = []
+    styles = set()
     for item in items:
         style = item["style"]
         variants = item["variants"]
@@ -217,7 +217,7 @@ def _generate_answers_for_clothing_items(
 
         variant = variants[0]
 
-        styles.append(style)
+        styles.add(style)
         answers.append(
             Answer(
                 imageUrl=variant["imageUrl"],
