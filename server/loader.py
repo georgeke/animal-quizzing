@@ -110,11 +110,6 @@ def load_items() -> Mapping[str, List[Item]]:
 
             variants.append(ItemVariant(imageUrl=image_url, colors=variant["colors"],))
         items_map[category].append(
-            Item(
-                category=category,
-                name=name,
-                variants=variants,
-                style=style,
-            )
+            Item(category=category, name=name, variants=variants, style=style,)
         )
     return items_map

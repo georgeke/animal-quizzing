@@ -2,12 +2,27 @@ from models import AnsweredQuestion, Villager
 from typing import Dict, List, Mapping, Set, Sequence
 
 
+FILTERING_TRAIT_BLACKLIST = ["song"]
+
+
 def filter_villagers(
+    villagers: Sequence[Villager], answered_questions: Sequence[AnsweredQuestion]
+) -> List[Villager]:
+    filtered_villagers = _filter_villagers(villagers, answered_questions[:5])
+    for question in answered_questions[5:]:
+        filtered_villagers = _filter_villagers(filtered_villagers, [question])
+    return filtered_villagers
+
+
+def _filter_villagers(
     villagers: Sequence[Villager], answered_questions: Sequence[AnsweredQuestion]
 ) -> List[Villager]:
     trait_to_trait_values: Dict[str, Set[str]] = {}
     for question in answered_questions:
         trait = question["villagerTrait"]
+        if trait in FILTERING_TRAIT_BLACKLIST:
+            continue
+
         if trait not in trait_to_trait_values:
             trait_to_trait_values[trait] = set()
 

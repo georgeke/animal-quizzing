@@ -10,16 +10,16 @@ HARDCODED_TEXT_QUESTION_IDS = ["1", "2", "3", "4", "5"]
 HARDCODED_AUDIO_QUESTION_IDS = ["6"]
 GENERATED_COLOR_QUESTION_IDS = ["7", "8", "9"]
 GENERATED_CLOTHING_QUESTION_IDS = ["10", "11", "12", "13", "14", "15", "16"]
-GENERATED_MISC_QUESTION_IDS = ["18", "19"]
+GENERATED_MISC_QUESTION_IDS = ["18"]
 
 
 def generate_filter_question(
     questions: Sequence[QuestionBlueprint], answers: Sequence[AnsweredQuestion]
 ) -> Question:
     filter_question_ids = list(
-        HARDCODED_TEXT_QUESTION_IDS +
-        GENERATED_COLOR_QUESTION_IDS +
-        GENERATED_CLOTHING_QUESTION_IDS
+        HARDCODED_TEXT_QUESTION_IDS
+        + GENERATED_COLOR_QUESTION_IDS
+        + GENERATED_CLOTHING_QUESTION_IDS
     )
 
     random.shuffle(filter_question_ids)
@@ -44,7 +44,10 @@ def generate_score_question(
     questions: Sequence[QuestionBlueprint], answers: Sequence[AnsweredQuestion],
 ) -> Question:
     scoring_question_ids = list(
-        HARDCODED_TEXT_QUESTION_IDS + HARDCODED_AUDIO_QUESTION_IDS + ["18"]
+        HARDCODED_TEXT_QUESTION_IDS
+        + HARDCODED_AUDIO_QUESTION_IDS
+        + GENERATED_CLOTHING_QUESTION_IDS
+        + GENERATED_MISC_QUESTION_IDS
     )
 
     random.shuffle(scoring_question_ids)
@@ -137,7 +140,6 @@ def _get_generated_question_from_question_blueprint(
         answers = _generate_answers_for_non_clothing_items(blueprint, villagers)
     elif source == "items" and villager_trait == "styles":
         answers = _generate_answers_for_clothing_items(blueprint, villagers)
-        print(answers)
 
     if answers:
         return Question(
@@ -188,7 +190,7 @@ def _generate_answers_for_non_clothing_items(
             )
             color_set.remove(primary_color)
 
-        assert(len(answers) >= 4)
+        assert len(answers) >= 4
         return answers[:4]
     raise ValueError(
         f"Item category {item_category} has no items with 4 or more variants with different colors!"
@@ -207,6 +209,8 @@ def _generate_answers_for_clothing_items(
     styles = set()
     for item in items:
         style = item["style"]
+        assert style
+
         variants = item["variants"]
 
         if style in styles:
@@ -220,10 +224,7 @@ def _generate_answers_for_clothing_items(
         styles.add(style)
         answers.append(
             Answer(
-                imageUrl=variant["imageUrl"],
-                audioUrl=None,
-                text=None,
-                traitValue=style
+                imageUrl=variant["imageUrl"], audioUrl=None, text=None, traitValue=style
             )
         )
     return answers[:4]
