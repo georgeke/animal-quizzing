@@ -1,11 +1,11 @@
-from typing import List, Optional, TypedDict, Union
+from typing import List, Optional, TypedDict
 
 
 class Answer(TypedDict):
     text: Optional[str]
     imageUrl: Optional[str]
     audioUrl: Optional[str]
-    traitValue: Union[str, List[str]]
+    traitValue: str
 
 
 class QuestionBase(TypedDict):

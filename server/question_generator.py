@@ -49,6 +49,7 @@ def generate_score_question(
 
     if question_blueprint.get("generateSource"):
         filtered_villagers = filter_villagers(load_villagers(), answers)
+        print(len(filtered_villagers))
         question = _get_generated_question_from_question_blueprint(
             question_blueprint, filtered_villagers
         )
@@ -153,24 +154,31 @@ def _generate_answers_for_non_clothing_items(
         variants = item["variants"]
         if len(variants) < 4:
             continue
-        colors_set = set(tuple(v.get("colors", [])) for v in variants)
-        if len(colors_set) < 4:
+
+        color_set = set()
+        for v in variants:
+            colors = v.get("colors")
+            if colors:
+                color_set.add(colors[0])
+
+        if len(color_set) < 4:
             continue
 
+        random.shuffle(variants)
         answers = []
         for variant in variants:
-            colors = tuple(variant["colors"])
-            if colors not in colors_set:
+            primary_color = variant["colors"][0]
+            if primary_color not in color_set:
                 continue
             answers.append(
                 Answer(
                     imageUrl=variant["imageUrl"],
                     audioUrl=None,
                     text=None,
-                    traitValue=list(colors),
+                    traitValue=primary_color,
                 )
             )
-            colors_set.remove(colors)
+            color_set.remove(primary_color)
 
         return answers[:4]
     raise ValueError(
