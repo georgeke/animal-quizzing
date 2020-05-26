@@ -4,6 +4,7 @@ from flask import Flask, Response, request, send_file
 from loader import load_question_blueprints, load_villagers, load_answered_questions
 from models import Question, Villager, QuestionBlueprint, AnsweredQuestion
 from question_generator import generate_filter_question, generate_score_question
+from scorer import filter_villagers
 from typing import Any, Dict, Sequence
 
 app = Flask(__name__)
@@ -26,7 +27,9 @@ def question() -> Dict[str, Any]:
     elif len(current_answers) < NUM_TOTAL_QUESTIONS:
         question = generate_score_question(questions, current_answers)
     else:
-        return {}
+        return {
+            "villagers": filter_villagers(load_villagers(), current_answers)
+        }
 
     return {
         "answers": current_answers,
