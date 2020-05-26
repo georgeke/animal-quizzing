@@ -21,9 +21,9 @@ def question() -> Dict[str, Any]:
 
     questions = load_question_blueprints()
 
-    if len(current_answers) < 5:
+    if len(current_answers) < NUM_FILTERED_QUESTIONS:
         question = generate_filter_question(questions, current_answers)
-    elif len(current_answers) < 10:
+    elif len(current_answers) < NUM_TOTAL_QUESTIONS:
         question = generate_score_question(questions, current_answers)
     else:
         return {}

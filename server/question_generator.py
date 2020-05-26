@@ -2,6 +2,7 @@ import random
 
 from models import Answer, AnsweredQuestion, Question, QuestionBlueprint, Villager
 from loader import load_items, load_villagers
+from scorer import filter_villagers
 from typing import Optional, List, Sequence
 
 
@@ -47,11 +48,15 @@ def generate_score_question(
     question_blueprint = _get_question_blueprint_with_id(questions, question_id)
 
     if question_blueprint.get("generateSource"):
+        filtered_villagers = filter_villagers(load_villagers(), answers)
         question = _get_generated_question_from_question_blueprint(
-            question_blueprint, load_villagers()
+            question_blueprint, filtered_villagers
         )
         if question:
             return question
+        raise ValueError(
+            f"No answers were generated for blueprint {question_blueprint}"
+        )
 
     return _get_question_from_question_blueprint(question_blueprint)
 
@@ -93,7 +98,7 @@ def _get_question_from_question_blueprint(blueprint: QuestionBlueprint) -> Quest
                 answers.append(answer)
             if len(trait_value_set) == 4:
                 break
-        assert(len(answers), 4)
+        assert len(answers) == 4
 
     return Question(
         questionId=blueprint["questionId"],
@@ -122,7 +127,7 @@ def _get_generated_question_from_question_blueprint(
             )
             for villager in villagers[:4]
         ]
-    elif source == "items" and villager_trait == "color":
+    elif source == "items" and villager_trait == "colors":
         answers = _generate_answers_for_non_clothing_items(blueprint, villagers)
 
     if answers:

@@ -627,7 +627,7 @@
     "questionId": "7",
     "questionText":"Which of these items would you prefer to have in your home?",
     "questionFormat":"image",
-    "villagerTrait":"color",
+    "villagerTrait":"colors",
     "generateSource": "items",
     "generateSourceCategory": "Miscellaneous"
   },
@@ -635,7 +635,7 @@
     "questionId": "8",
     "questionText":"Which of these housewares would you prefer to have in your home?",
     "questionFormat":"image",
-    "villagerTrait":"color",
+    "villagerTrait":"colors",
     "generateSource": "items",
     "generateSourceCategory": "Housewares"
   },
@@ -643,7 +643,7 @@
     "questionId": "9",
     "questionText":"Which of these things would you hang on your wall?",
     "questionFormat":"image",
-    "villagerTrait":"color",
+    "villagerTrait":"colors",
     "generateSource": "items",
     "generateSourceCategory": "Wall-mounted"
   },
