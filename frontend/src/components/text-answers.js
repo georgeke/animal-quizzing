@@ -53,5 +53,9 @@ export default TextAnswers;
 TextAnswers.propTypes = {
   answerOptions: PropTypes.array.isRequired,
   onAnswerClick: PropTypes.func.isRequired,
-  activeAnswer: PropTypes.shape({}).isRequired,
+  activeAnswer: PropTypes.shape({}),
+};
+
+TextAnswers.defaultProps = {
+  activeAnswer: null,
 };

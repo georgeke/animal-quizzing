@@ -74,5 +74,9 @@ export default AudioAnswers;
 AudioAnswers.propTypes = {
   answerOptions: PropTypes.array.isRequired,
   onAnswerClick: PropTypes.func.isRequired,
-  activeAnswer: PropTypes.shape({}).isRequired,
+  activeAnswer: PropTypes.shape({}),
+};
+
+AudioAnswers.defaultProps = {
+  activeAnswer: null,
 };

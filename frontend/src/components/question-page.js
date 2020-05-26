@@ -38,7 +38,7 @@ const QuestionPage = ({
     answers
   } = question;
   const [activeAnswer, setActiveAnswer] = useState(null);
-  const buttonDisabled = !activeAnswer;
+  const buttonDisabled = activeAnswer === null;
 
   const onNext = useCallback(() => {
     const newAnswer = {
