@@ -704,14 +704,6 @@
     "generateSourceCategory": "Socks"
   },
   {
-    "questionId": "17",
-    "questionText":"Which of these umbrellas would you prefer to use?",
-    "questionFormat":"image",
-    "villagerTrait":"styles",
-    "generateSource": "items",
-    "generateSourceCategory": "Umbrellas"
-  },
-  {
     "questionId": "18",
     "questionText":"Which catchphrase do you like the most?",
     "questionFormat":"text",

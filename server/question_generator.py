@@ -9,7 +9,7 @@ from typing import Optional, List, Sequence
 HARDCODED_TEXT_QUESTION_IDS = ["1", "2", "3", "4", "5"]
 HARDCODED_AUDIO_QUESTION_IDS = ["6"]
 GENERATED_COLOR_QUESTION_IDS = ["7", "8", "9"]
-GENERATED_CLOTHING_QUESTION_IDS = ["10", "11", "12", "13", "14", "15", "16", "17"]
+GENERATED_CLOTHING_QUESTION_IDS = ["10", "11", "12", "13", "14", "15", "16"]
 GENERATED_MISC_QUESTION_IDS = ["18", "19"]
 
 
@@ -33,6 +33,9 @@ def generate_filter_question(
         )
         if question:
             return question
+        raise ValueError(
+            f"No answers were generated for blueprint {question_blueprint}"
+        )
 
     return _get_question_from_question_blueprint(question_blueprint)
 
@@ -132,9 +135,9 @@ def _get_generated_question_from_question_blueprint(
         ]
     elif source == "items" and villager_trait == "colors":
         answers = _generate_answers_for_non_clothing_items(blueprint, villagers)
-
-    elif source == "items" and villager_trait == "style":
+    elif source == "items" and villager_trait == "styles":
         answers = _generate_answers_for_clothing_items(blueprint, villagers)
+        print(answers)
 
     if answers:
         return Question(
@@ -185,6 +188,7 @@ def _generate_answers_for_non_clothing_items(
             )
             color_set.remove(primary_color)
 
+        assert(len(answers) >= 4)
         return answers[:4]
     raise ValueError(
         f"Item category {item_category} has no items with 4 or more variants with different colors!"
@@ -223,4 +227,3 @@ def _generate_answers_for_clothing_items(
             )
         )
     return answers[:4]
-
