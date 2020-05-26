@@ -651,7 +651,7 @@
     "questionId": "10",
     "questionText":"Which of these tops would you prefer to wear?",
     "questionFormat":"image",
-    "villagerTrait":"style",
+    "villagerTrait":"styles",
     "generateSource": "items",
     "generateSourceCategory": "Tops"
   },
@@ -659,7 +659,7 @@
     "questionId": "11",
     "questionText":"Which of these bottoms would you prefer to wear?",
     "questionFormat":"image",
-    "villagerTrait":"style",
+    "villagerTrait":"styles",
     "generateSource": "items",
     "generateSourceCategory": "Bottoms"
   },
@@ -667,7 +667,7 @@
     "questionId": "12",
     "questionText":"Which of these outfits would you prefer to wear?",
     "questionFormat":"image",
-    "villagerTrait":"style",
+    "villagerTrait":"styles",
     "generateSource": "items",
     "generateSourceCategory": "Dress-Up"
   },
@@ -675,7 +675,7 @@
     "questionId": "13",
     "questionText":"Which of these headwears would you prefer to wear?",
     "questionFormat":"image",
-    "villagerTrait":"style",
+    "villagerTrait":"styles",
     "generateSource": "items",
     "generateSourceCategory": "Headwear"
   },
@@ -683,7 +683,7 @@
     "questionId": "14",
     "questionText":"Which of these bags would you prefer to wear?",
     "questionFormat":"image",
-    "villagerTrait":"style",
+    "villagerTrait":"styles",
     "generateSource": "items",
     "generateSourceCategory": "Bags"
   },
@@ -691,7 +691,7 @@
     "questionId": "15",
     "questionText":"Which of these shoes would you prefer to wear?",
     "questionFormat":"image",
-    "villagerTrait":"style",
+    "villagerTrait":"styles",
     "generateSource": "items",
     "generateSourceCategory": "Shoes"
   },
@@ -699,7 +699,7 @@
     "questionId": "16",
     "questionText":"Which of these socks would you prefer to wear?",
     "questionFormat":"image",
-    "villagerTrait":"style",
+    "villagerTrait":"styles",
     "generateSource": "items",
     "generateSourceCategory": "Socks"
   },
@@ -707,7 +707,7 @@
     "questionId": "17",
     "questionText":"Which of these umbrellas would you prefer to use?",
     "questionFormat":"image",
-    "villagerTrait":"style",
+    "villagerTrait":"styles",
     "generateSource": "items",
     "generateSourceCategory": "Umbrellas"
   },
