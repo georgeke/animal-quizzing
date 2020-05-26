@@ -40,5 +40,9 @@ export default ImageAnswers;
 ImageAnswers.propTypes = {
   answerOptions: PropTypes.array.isRequired,
   onAnswerClick: PropTypes.func.isRequired,
-  activeAnswer: PropTypes.shape({}).isRequired,
+  activeAnswer: PropTypes.shape({}),
+};
+
+ImageAnswers.defaultProps = {
+  activeAnswer: null,
 };
