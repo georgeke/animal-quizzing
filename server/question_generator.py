@@ -17,7 +17,9 @@ def generate_filter_question(
     questions: Sequence[QuestionBlueprint], answers: Sequence[AnsweredQuestion]
 ) -> Question:
     filter_question_ids = list(
-        HARDCODED_TEXT_QUESTION_IDS + GENERATED_COLOR_QUESTION_IDS
+        HARDCODED_TEXT_QUESTION_IDS +
+        GENERATED_COLOR_QUESTION_IDS +
+        GENERATED_CLOTHING_QUESTION_IDS
     )
 
     random.shuffle(filter_question_ids)
@@ -130,6 +132,9 @@ def _get_generated_question_from_question_blueprint(
     elif source == "items" and villager_trait == "colors":
         answers = _generate_answers_for_non_clothing_items(blueprint, villagers)
 
+    elif source == "items" and villager_trait == "style":
+        answers = _generate_answers_for_clothing_items(blueprint, villagers)
+
     if answers:
         return Question(
             questionId=blueprint["questionId"],
@@ -176,3 +181,38 @@ def _generate_answers_for_non_clothing_items(
     raise ValueError(
         f"Item category {item_category} has no items with 4 or more variants with different colors!"
     )
+
+
+def _generate_answers_for_clothing_items(
+    blueprint: QuestionBlueprint, villagers: List[Villager],
+) -> List[Answer]:
+    item_category = blueprint["generateSourceCategory"]
+    assert item_category
+    items = load_items()[item_category]
+    random.shuffle(items)
+
+    answers = []
+    styles = []
+    for item in items:
+        style = item["style"]
+        variants = item["variants"]
+
+        if style in styles:
+            continue
+
+        if len(variants) > 1:
+            random.shuffle(variants)
+
+        variant = variants[0]
+
+        styles.append(style)
+        answers.append(
+            Answer(
+                imageUrl=variant["imageUrl"],
+                audioUrl=None,
+                text=None,
+                traitValue=style
+            )
+        )
+    return answers[:4]
+
