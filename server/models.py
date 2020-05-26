@@ -58,4 +58,5 @@ class ItemVariant(TypedDict):
 class Item(TypedDict):
     category: str
     name: str
+    style: Optional[str]
     variants: List[ItemVariant]
