@@ -53,7 +53,7 @@ const QuestionPage = ({
     newAnswers.push(newAnswer);
 
     // TODO: replace with actual url
-    axios.post('http://localhost:5000/question', {
+    axios.post('https://animal-quizzing.herokuapp.com/question', {
       answers: newAnswers,
     })
     .then((response) => {
