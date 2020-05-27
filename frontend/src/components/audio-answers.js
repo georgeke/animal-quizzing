@@ -56,7 +56,7 @@ const AudioAnswers = ({ answerOptions, onAnswerClick, activeAnswer }) => (
       >
         <SongCover src={answer.imageUrl} alt={answer.text} />
         <SongPlayer controls>
-          <source src={`http://localhost:5000${answer.audioUrl}`} type="audio/mpeg" />
+          <source src={`https://animal-quizzing.herokuapp.com/${answer.audioUrl}`} type="audio/mpeg" />
         </SongPlayer>
         <SongName onClick={() => onAnswerClick(answer)}>
           <IconContainer active={answer === activeAnswer}>
