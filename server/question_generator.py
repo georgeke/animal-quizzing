@@ -148,6 +148,11 @@ def _get_generated_question_from_question_blueprint(
     random.shuffle(villagers)
 
     if source == "catchphrase":
+        if len(villagers) < 4:
+            all_villagers = load_villagers()
+            random.shuffle(all_villagers)
+            villagers = villagers + all_villagers
+
         answers = [
             Answer(
                 imageUrl=None,
