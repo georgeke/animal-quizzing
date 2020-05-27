@@ -29,6 +29,7 @@ const QuestionPage = ({
   currentAnswers,
   setAnswers,
   setQuestion,
+  setResult,
 }) => {
   const {
     questionId,
@@ -59,8 +60,12 @@ const QuestionPage = ({
     .then((response) => {
       const { data } = response;
 
-      setAnswers(data.answers);
-      setQuestion(data.nextQuestion);
+      if (data.answers && data.nextQuestion) {
+        setAnswers(data.answers);
+        setQuestion(data.nextQuestion);
+      } else if (data.villagers) {
+        setResult(data)
+      }
       setActiveAnswer(null);
     })
     .catch((error) => {
