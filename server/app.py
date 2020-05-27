@@ -55,7 +55,7 @@ def song() -> Response:
 
 @app.after_request
 def update_cors(response: Response):
-    response.headers.add("Access-Control-Allow-Origin", "https://animal-quizzing.herokuapp.com")
+    response.headers.add("Access-Control-Allow-Origin", "https://animal-quizzing.netlify.app")
     response.headers.add("Access-Control-Allow-Headers", "Content-Type,Authorization")
     response.headers.add("Access-Control-Allow-Methods", "GET,POST")
     response.headers.add("Access-Control-Allow-Credentials", "true")
