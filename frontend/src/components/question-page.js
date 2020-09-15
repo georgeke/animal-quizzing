@@ -39,7 +39,8 @@ const QuestionPage = ({
     answers
   } = question;
   const [activeAnswer, setActiveAnswer] = useState(null);
-  const buttonDisabled = activeAnswer === null;
+  const [isLoading, setIsLoading] = useState(false);
+  const buttonDisabled = activeAnswer === null || isLoading;
 
   const onNext = useCallback(() => {
     const newAnswer = {
@@ -53,11 +54,15 @@ const QuestionPage = ({
     const newAnswers = currentAnswers;
     newAnswers.push(newAnswer);
 
+    setIsLoading(true);
+
     // TODO: replace with actual url
     axios.post('https://animal-quizzing.herokuapp.com/question', {
       answers: newAnswers,
     })
     .then((response) => {
+      setIsLoading(false);
+
       const { data } = response;
 
       if (data.answers && data.nextQuestion) {
@@ -69,6 +74,7 @@ const QuestionPage = ({
       setActiveAnswer(null);
     })
     .catch((error) => {
+      setIsLoading(false);
       console.log(error);
     });
   }, [
@@ -115,7 +121,7 @@ const QuestionPage = ({
       </QuestionText>
       {answersComponent}
       <ButtonContainer>
-        <Button primary disabled={buttonDisabled} onClick={onNext}>Next</Button>
+        <Button primary disabled={buttonDisabled} onClick={onNext}>{isLoading ? 'Loading ...' : 'Next'}</Button>
       </ButtonContainer>
     </QuestionContainer>
   );

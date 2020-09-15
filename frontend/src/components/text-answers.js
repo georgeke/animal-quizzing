@@ -7,7 +7,6 @@ import { ReactComponent as Leaf } from '../assets/icons/leaf.svg';
 
 const AnswersContainer = styled.div`
   margin-top: 60px;
-  margin-left: 60px;
 `;
 
 const AnswerContainer = styled.a`

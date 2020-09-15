@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 import axios from 'axios';
@@ -25,18 +25,24 @@ const HomepageContainer = styled.div`
 `;
 
 const Homepage = ({ setAnswers, setQuestion }) => {
+  const [isLoading, setIsLoading] = useState(false);
+
   const onStartClick = () => {
+    setIsLoading(true);
     // TODO: replace with actual url
     axios.post('https://animal-quizzing.herokuapp.com/question', {
       answers: [],
     })
     .then((response) => {
+      setIsLoading(false);
+
       const { data } = response;
 
       setAnswers(data.answers);
       setQuestion(data.nextQuestion);
     })
     .catch((error) => {
+      setIsLoading(false);
       console.log(error);
     });
   };
@@ -46,7 +52,7 @@ const Homepage = ({ setAnswers, setQuestion }) => {
       <Leaf width={270} height={270} />
       <Title>Which villager are you?</Title>
       <SubTitle>Animal Crossing: New Horizons</SubTitle>
-      <Button onClick={onStartClick} primary>Start</Button>
+      <Button onClick={onStartClick} disabled={isLoading} primary>{isLoading ? 'Starting ...' : 'Start'}</Button>
     </HomepageContainer>
   );
 }
