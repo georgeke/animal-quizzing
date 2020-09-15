@@ -12,7 +12,8 @@ const AnswersContainer = styled.div`
   justify-content: center;
 `;
 
-const AnswerContainer = styled.div`
+const AnswerContainer = styled.a`
+  cursor: pointer;
   margin-top: 40px;
   margin-left: 40px;
   margin-right: 40px;
@@ -26,8 +27,7 @@ const SongCover = styled.img`
   margin-bottom: 20px
 `;
 
-const SongName = styled.a`
-  cursor: pointer;
+const SongName = styled.span`
   font-size: 30px;
   margin-left: 20px;
   margin-right: 70px;
@@ -53,12 +53,13 @@ const AudioAnswers = ({ answerOptions, onAnswerClick, activeAnswer }) => (
     {answerOptions.map((answer) => (
       <AnswerContainer
         key={answer.imageUrl}
+        onClick={() => onAnswerClick(answer)}
       >
         <SongCover src={answer.imageUrl} alt={answer.text} />
         <SongPlayer controls>
-          <source src={`http://localhost:5000${answer.audioUrl}`} type="audio/mpeg" />
+          <source src={`https://animal-quizzing.herokuapp.com/${answer.audioUrl}`} type="audio/mpeg" />
         </SongPlayer>
-        <SongName onClick={() => onAnswerClick(answer)}>
+        <SongName>
           <IconContainer active={answer === activeAnswer}>
             <Leaf width={30} height={30} />
           </IconContainer>
