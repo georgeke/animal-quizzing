@@ -5,8 +5,8 @@ import { css } from '@emotion/core';
 import theme from '../theme';
 
 const Button = styled.button`
-  background: transparent;
-  border: 1px ${theme.colors.gray[4]} solid;
+  background: ${theme.colors.white};
+  border: 1px ${theme.colors.green.leaf} solid;
   border-radius: 3px;
   appearance: none;
 
@@ -15,7 +15,7 @@ const Button = styled.button`
   padding-right: 32px;
   height: 50px;
 
-  color: ${theme.colors.gray[9]};
+  color: ${theme.colors.green.leaf};
   font-size: 21px;
   font-family: 'IBM Plex Mono';
   line-height: 43px;
@@ -32,8 +32,6 @@ const Button = styled.button`
   display: inline-flex;
   justify-content: center;
   align-items: center;
-
-  background: ${theme.colors.green.tea};
 
   &:hover {
     border-color: none;
@@ -55,7 +53,7 @@ const Button = styled.button`
   `}
 
   &[disabled] {
-    color: ${theme.colors.gray[6]};
+    color: ${theme.colors.gray[4]};
     border-color: ${theme.colors.gray[2]};
     cursor: default;
     pointer-events: none;

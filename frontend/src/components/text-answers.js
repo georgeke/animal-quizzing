@@ -14,6 +14,10 @@ const AnswerContainer = styled.a`
   margin-top: 40px;
   display: flex;
   align-items: center;
+  background: white;
+  border: 1px #E462B0 solid;
+  border-radius: 3px;
+  padding: 25px;
 `;
 
 const TextAnswer = styled.span`
@@ -39,7 +43,7 @@ const TextAnswers = ({ answerOptions, onAnswerClick, activeAnswer }) => (
         onClick={() => onAnswerClick(answer)}
       >
         <IconContainer active={answer === activeAnswer}>
-          <Leaf width={30} height={30} />
+          <Leaf width={25} height={25} />
         </IconContainer>
         <TextAnswer>{answer.text}</TextAnswer>
       </AnswerContainer>
