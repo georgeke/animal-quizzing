@@ -3,7 +3,7 @@
 ## Dev Setup
 Instructions only for Python3 on Mac.
 
-Backend: (Run all in server directory)
+Backend: (Run all in root directory)
  - Setup Virtual Environment: `python3 -m venv venv`
  - Activate virtual environment: `. venv/bin/activate`
  - Install all package dependancies: `pip install -r requirements.txt`
