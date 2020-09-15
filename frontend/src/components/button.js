@@ -18,6 +18,7 @@ const Button = styled.button`
   color: ${theme.colors.green.leaf};
   font-size: 21px;
   font-family: 'IBM Plex Mono';
+  font-weight: 800;
   line-height: 43px;
   text-align: center;
   vertical-align: middle;
