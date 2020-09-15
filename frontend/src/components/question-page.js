@@ -122,7 +122,7 @@ const QuestionPage = ({
       </QuestionText>
       {answersComponent}
       <ButtonContainer>
-        <Button primary disabled={buttonDisabled} onClick={onNext}>{isLoading ? 'Loading ...' : 'Next'}</Button>
+        <Button primary disabled={buttonDisabled} onClick={onNext}>{isLoading ? '...' : 'Next'}</Button>
       </ButtonContainer>
     </QuestionContainer>
   );
