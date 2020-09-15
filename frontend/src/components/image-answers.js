@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
+import { ReactComponent as Leaf } from '../assets/icons/leaf.svg';
+
 
 const AnswersContainer = styled.div`
   margin-top: 60px;
@@ -14,11 +16,27 @@ const AnswerContainer = styled.a`
   cursor: pointer;
   margin-top: 40px;
   align-items: center;
+  background: white;
+  border: 1px #E462B0 solid;
+  border-radius: 3px;
+  display: flex;
 `;
 
 const ImageAnswer = styled.img`
-  margin-left: 10px;
   max-width: 100px;
+  padding: 40px;
+  padding-left: 10px;
+`;
+
+const IconContainer = styled.div`
+  opacity: ${(props) => props.active ? '1' : '0'};
+  transition: ease 200ms;
+  align-self: flex-start;
+  margin: 5px;
+
+  ${AnswerContainer}:hover & {
+    opacity: 1;
+  }
 `;
 
 
@@ -29,6 +47,9 @@ const ImageAnswers = ({ answerOptions, onAnswerClick, activeAnswer }) => (
         key={answer.imageUrl}
         onClick={() => onAnswerClick(answer)}
       >
+        <IconContainer active={answer === activeAnswer}>
+          <Leaf width={25} height={25} />
+        </IconContainer>
         <ImageAnswer src={answer.imageUrl} alt={answer.text} />
       </AnswerContainer>
     ))}
