@@ -78,6 +78,7 @@ const QuestionPage = ({
       console.log(error);
     });
   }, [
+    setResult,
     activeAnswer,
     currentAnswers,
     setAnswers,
