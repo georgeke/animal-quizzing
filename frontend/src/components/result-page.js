@@ -4,41 +4,62 @@ import styled from '@emotion/styled';
 
 
 const ResultContainer = styled.div`
-  margin-top: 100px;
+  margin-top: 130px;
   text-align: center;
-  display: flex;
-  flex-direction: column;
+  margin-bottom: 100px;
 `;
 
 const ResultTitle = styled.div`
   font-size: 36px;
   font-style: italic;
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 70px;
 `;
 
-const DetailsContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+const Name = styled.span`
+  font-weight: bold;
+
 `;
 
 const TraitsContainer = styled.div`
+  font-size: 22px;
+  text-align: left;
   display: flex;
-  flex-direction: column;
-  margin-left: 30px;
+  justify-content: space-evenly;
+  margin-bottom: 50px;
+`;
+
+const TraitColumn = styled.div`
+  display: flex;
+`;
+
+const Trait = styled.div`
+  letter-spacing: 0.125rem;
+  font-size: 17px;
+  margin-bottom: 30px;
 `;
 
 const TraitText = styled.div`
+  letter-spacing: 0;
   font-size: 22px;
-  text-align: left;
+  font-style: italic;
+  margin-left: 45px;
+  margin-bottom: 21px;
 `;
 
 const VillagerImage = styled.img`
   max-width: 150px;
   min-width: 150px;
   max-height: 150px;
+  margin-bottom: 50px;
 `;
+
+const Link = styled.a`
+  font-size: 16px;
+  font-style: italic;
+  color: #E462B0;
+`;
+
 
 const ResultPage = ({
   result,
@@ -47,19 +68,37 @@ const ResultPage = ({
   const villager = villagers[0];
   return (
     <ResultContainer>
-      <ResultTitle>You are {villager.name}!</ResultTitle>
-      <DetailsContainer>
-        <VillagerImage src={villager.profileImageUrl} alt={villager.alt} />
-        <TraitsContainer>
-          <TraitText>Species: {villager.species}</TraitText>
-          <TraitText>Personality: {villager.personality}</TraitText>
-          <TraitText>Hobby: {villager.hobby}</TraitText>
-          <TraitText>Birthday: {villager.birthday}</TraitText>
-          <TraitText>Catchphrase: "{villager.catchphrase}"</TraitText>
-          <TraitText>Preferred Color: {villager.colors[0]}</TraitText>
-          <TraitText>Preferred Style: {villager.styles[0]}</TraitText>
-        </TraitsContainer>
-      </DetailsContainer>
+      <ResultTitle>You are <Name>{villager.name}</Name>!</ResultTitle>
+      <VillagerImage src={villager.profileImageUrl} alt={villager.alt} />
+      <TraitsContainer>
+        <TraitColumn>
+          <div>
+            <Trait>Species:</Trait>
+            <Trait>Birthday:</Trait>
+            <Trait>Favourite Color:</Trait>
+            <Trait>Favourite Style:</Trait>
+          </div>
+          <div>
+            <TraitText>{villager.species}</TraitText>
+            <TraitText>{villager.birthday}</TraitText>
+            <TraitText>{villager.colors[0]}</TraitText>
+            <TraitText>{villager.styles[0]}</TraitText>
+          </div>
+        </TraitColumn>
+        <TraitColumn>
+          <div>
+            <Trait>Personality:</Trait>
+            <Trait>Catchphrase:</Trait>
+            <Trait>Hobby:</Trait>
+          </div>
+          <div>
+            <TraitText>{villager.personality}</TraitText>
+            <TraitText>"{villager.catchphrase}"</TraitText>
+            <TraitText>{villager.hobby}</TraitText>
+          </div>
+        </TraitColumn>
+      </TraitsContainer>
+      <Link target="_blank" href={`https://animalcrossing.fandom.com/wiki/${villager.name}`}>See more here!</Link>
     </ResultContainer>
   );
 };
