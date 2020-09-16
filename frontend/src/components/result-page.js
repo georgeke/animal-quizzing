@@ -18,7 +18,6 @@ const ResultTitle = styled.div`
 
 const Name = styled.span`
   font-weight: bold;
-
 `;
 
 const TraitsContainer = styled.div`
@@ -47,6 +46,10 @@ const TraitText = styled.div`
   margin-bottom: 21px;
 `;
 
+const MoreLink = styled.a`
+  color: black;
+`;
+
 const VillagerImage = styled.img`
   max-width: 150px;
   min-width: 150px;
@@ -58,6 +61,8 @@ const Link = styled.a`
   font-size: 16px;
   font-style: italic;
   color: #E462B0;
+  text-decoration: underline;
+  cursor: pointer;
 `;
 
 
@@ -66,9 +71,14 @@ const ResultPage = ({
 }) => {
   const { villagers } = result;
   const villager = villagers[0];
+
+  const onClick = () => console.log('click');
+
   return (
     <ResultContainer>
-      <ResultTitle>You are <Name>{villager.name}</Name>!</ResultTitle>
+      <ResultTitle>{'You are '}
+        <Name>{villager.name}</Name>!
+      </ResultTitle>
       <VillagerImage src={villager.profileImageUrl} alt={villager.alt} />
       <TraitsContainer>
         <TraitColumn>
@@ -90,6 +100,11 @@ const ResultPage = ({
             <Trait>Personality:</Trait>
             <Trait>Catchphrase:</Trait>
             <Trait>Hobby:</Trait>
+            <Trait>
+              <MoreLink target="_blank" href={`https://animalcrossing.fandom.com/wiki/${villager.name}`}>
+                See more
+              </MoreLink>
+            </Trait>
           </div>
           <div>
             <TraitText>{villager.personality}</TraitText>
@@ -98,7 +113,9 @@ const ResultPage = ({
           </div>
         </TraitColumn>
       </TraitsContainer>
-      <Link target="_blank" href={`https://animalcrossing.fandom.com/wiki/${villager.name}`}>See more here!</Link>
+      <Link onClick={onClick}>
+        Made with &#10084; in Quarantine
+      </Link>
     </ResultContainer>
   );
 };
