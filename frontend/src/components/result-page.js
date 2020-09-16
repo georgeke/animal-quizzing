@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 
+import AboutModal from './about-modal';
+
 
 const ResultContainer = styled.div`
   margin-top: 130px;
@@ -36,7 +38,6 @@ const Trait = styled.div`
   letter-spacing: 0.125rem;
   font-size: 17px;
   margin-bottom: 30px;
-  font-weight: bold;
 `;
 
 const TraitText = styled.div`
@@ -73,7 +74,7 @@ const ResultPage = ({
   const { villagers } = result;
   const villager = villagers[0];
 
-  const onClick = () => console.log('click');
+  const [modalOpen, setModalOpen] = useState(false);
 
   return (
     <ResultContainer>
@@ -114,9 +115,10 @@ const ResultPage = ({
           </div>
         </TraitColumn>
       </TraitsContainer>
-      <Link onClick={onClick}>
+      <Link onClick={() => setModalOpen(true)}>
         Made with &#10084; in Quarantine
       </Link>
+      {modalOpen && <AboutModal closeModal={() => setModalOpen(false)} />}
     </ResultContainer>
   );
 };
