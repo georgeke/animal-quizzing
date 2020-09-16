@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 
@@ -25,7 +25,7 @@ const TraitsContainer = styled.div`
   text-align: left;
   display: flex;
   justify-content: space-evenly;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
 `;
 
 const TraitColumn = styled.div`
@@ -36,6 +36,7 @@ const Trait = styled.div`
   letter-spacing: 0.125rem;
   font-size: 17px;
   margin-bottom: 30px;
+  font-weight: bold;
 `;
 
 const TraitText = styled.div`
@@ -102,7 +103,7 @@ const ResultPage = ({
             <Trait>Hobby:</Trait>
             <Trait>
               <MoreLink target="_blank" href={`https://animalcrossing.fandom.com/wiki/${villager.name}`}>
-                See more
+                See more &#8674;
               </MoreLink>
             </Trait>
           </div>
