@@ -75,7 +75,7 @@ const ResultPage = ({
           <div>
             <Trait>Species:</Trait>
             <Trait>Birthday:</Trait>
-            <Trait>Favourite Color:</Trait>
+            <Trait>Favourite Colour:</Trait>
             <Trait>Favourite Style:</Trait>
           </div>
           <div>
