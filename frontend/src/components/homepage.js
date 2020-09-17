@@ -52,7 +52,7 @@ const Homepage = ({ setAnswers, setQuestion }) => {
       <Leaf width={270} height={270} />
       <Title>Which villager are you?</Title>
       <SubTitle>Animal Crossing: New Horizons</SubTitle>
-      <Button onClick={onStartClick} disabled={isLoading}>{isLoading ? 'Starting ...' : 'Start'}</Button>
+      <Button onClick={onStartClick} disabled={isLoading}>{isLoading ? 'Starting' : 'Start'}</Button>
     </HomepageContainer>
   );
 }
