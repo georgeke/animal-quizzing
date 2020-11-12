@@ -6,7 +6,7 @@ import theme from '../theme';
 
 const Button = styled.button`
   background: ${theme.colors.white};
-  border: 1px ${theme.colors.green.leaf} solid;
+  border: 2px ${theme.colors.green.leaf} solid;
   border-radius: 3px;
   appearance: none;
 
@@ -37,6 +37,10 @@ const Button = styled.button`
   &:hover {
     border-color: none;
     background: ${theme.colors.green.teaDark};
+  }
+
+  &:active {
+    transform: translateY(4px);
   }
 
   transition: color 200ms ease, background 200ms ease, border 200ms ease;
