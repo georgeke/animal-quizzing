@@ -1,27 +1,27 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import styled from '@emotion/styled';
-import axios from 'axios';
+import React, { useState } from "react";
 
-import { ReactComponent as Leaf } from '../assets/icons/leaf.svg';
-import Button from './button';
+import Button from "./button";
+import { ReactComponent as Leaf } from "../assets/icons/leaf.svg";
+import PropTypes from "prop-types";
+import axios from "axios";
+import styled from "@emotion/styled";
 
 const Title = styled.div`
-  font-size: 55px;
+  font-size: 65px;
   font-weight: 400;
-  font-style: italic;
   margin-top: 85px;
-  margin-bottom: 30px;
+  margin-bottom: 22px;
 `;
 
 const SubTitle = styled.div`
-  font-size: 24px;
-  margin-bottom: 55px;
+  font-size: 23px;
+  margin-bottom: 60px;
+  font-style: italic;
 `;
 
 const HomepageContainer = styled.div`
   text-align: center;
-  margin-top: 200px;
+  margin-top: 190px;
 `;
 
 const Homepage = ({ setAnswers, setQuestion }) => {
@@ -30,21 +30,22 @@ const Homepage = ({ setAnswers, setQuestion }) => {
   const onStartClick = () => {
     setIsLoading(true);
     // TODO: replace with actual url
-    axios.post('https://animal-quizzing.herokuapp.com/question', {
-      answers: [],
-    })
-    .then((response) => {
-      setIsLoading(false);
+    axios
+      .post("https://localhost:5000/question", {
+        answers: [],
+      })
+      .then((response) => {
+        setIsLoading(false);
 
-      const { data } = response;
+        const { data } = response;
 
-      setAnswers(data.answers);
-      setQuestion(data.nextQuestion);
-    })
-    .catch((error) => {
-      setIsLoading(false);
-      console.log(error);
-    });
+        setAnswers(data.answers);
+        setQuestion(data.nextQuestion);
+      })
+      .catch((error) => {
+        setIsLoading(false);
+        console.log(error);
+      });
   };
 
   return (
@@ -52,14 +53,20 @@ const Homepage = ({ setAnswers, setQuestion }) => {
       <Leaf width={270} height={270} />
       <Title>Which villager are you?</Title>
       <SubTitle>Animal Crossing: New Horizons</SubTitle>
-      <Button onClick={onStartClick} disabled={isLoading}>{isLoading ? 'Starting' : 'Start'}</Button>
+      {/* <Button onClick={onStartClick} disabled={isLoading}>
+        {isLoading ? "Starting" : "Start"}
+      </Button> */}
+
+      <button onClick={onStartClick} disabled={isLoading} className="button">
+        {isLoading ? "Starting" : "Start"}
+      </button>
     </HomepageContainer>
   );
-}
+};
 
 export default Homepage;
 
 Homepage.propTypes = {
   setAnswers: PropTypes.func.isRequired,
   setQuestion: PropTypes.func.isRequired,
-}
+};

@@ -1,13 +1,12 @@
-import React, { useState, useCallback } from 'react';
-import PropTypes from 'prop-types';
-import styled from '@emotion/styled';
-import axios from 'axios';
+import React, { useCallback, useState } from "react";
 
-import AudioAnswers from './audio-answers';
-import ImageAnswers from './image-answers';
-import TextAnswers from './text-answers';
-import Button from './button';
-
+import AudioAnswers from "./audio-answers";
+import Button from "./button";
+import ImageAnswers from "./image-answers";
+import PropTypes from "prop-types";
+import TextAnswers from "./text-answers";
+import axios from "axios";
+import styled from "@emotion/styled";
 
 const QuestionContainer = styled.div`
   margin-top: 100px;
@@ -36,7 +35,7 @@ const QuestionPage = ({
     questionFormat,
     questionText,
     villagerTrait,
-    answers
+    answers,
   } = question;
   const [activeAnswer, setActiveAnswer] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -57,26 +56,27 @@ const QuestionPage = ({
     setIsLoading(true);
 
     // TODO: replace with actual url
-    axios.post('https://animal-quizzing.herokuapp.com/question', {
-      answers: newAnswers,
-    })
-    .then((response) => {
-      setIsLoading(false);
+    axios
+      .post("https://animal-quizzing.herokuapp.com/question", {
+        answers: newAnswers,
+      })
+      .then((response) => {
+        setIsLoading(false);
 
-      const { data } = response;
+        const { data } = response;
 
-      if (data.answers && data.nextQuestion) {
-        setAnswers(data.answers);
-        setQuestion(data.nextQuestion);
-      } else if (data.villagers) {
-        setResult(data)
-      }
-      setActiveAnswer(null);
-    })
-    .catch((error) => {
-      setIsLoading(false);
-      console.log(error);
-    });
+        if (data.answers && data.nextQuestion) {
+          setAnswers(data.answers);
+          setQuestion(data.nextQuestion);
+        } else if (data.villagers) {
+          setResult(data);
+        }
+        setActiveAnswer(null);
+      })
+      .catch((error) => {
+        setIsLoading(false);
+        console.log(error);
+      });
   }, [
     setResult,
     activeAnswer,
@@ -89,7 +89,7 @@ const QuestionPage = ({
     villagerTrait,
   ]);
   let answersComponent;
-  if (questionFormat === 'text') {
+  if (questionFormat === "text") {
     answersComponent = (
       <TextAnswers
         answerOptions={answers}
@@ -97,7 +97,7 @@ const QuestionPage = ({
         activeAnswer={activeAnswer}
       />
     );
-  } else if (questionFormat === 'image') {
+  } else if (questionFormat === "image") {
     answersComponent = (
       <ImageAnswers
         answerOptions={answers}
@@ -105,7 +105,7 @@ const QuestionPage = ({
         activeAnswer={activeAnswer}
       />
     );
-  } else if (questionFormat === 'audio') {
+  } else if (questionFormat === "audio") {
     answersComponent = (
       <AudioAnswers
         answerOptions={answers}
@@ -117,12 +117,15 @@ const QuestionPage = ({
 
   return (
     <QuestionContainer>
-      <QuestionText>
-        {questionText}
-      </QuestionText>
+      <QuestionText>{questionText}</QuestionText>
       {answersComponent}
       <ButtonContainer>
-        <Button disabled={buttonDisabled} onClick={onNext}>{isLoading ? '...' : 'Next'}</Button>
+        <button className="button" onClick={onNext}>
+          {isLoading ? "..." : "Next"}
+        </button>
+        {/* <Button disabled={buttonDisabled} onClick={onNext}>
+          {isLoading ? "..." : "Next"}
+        </Button> */}
       </ButtonContainer>
     </QuestionContainer>
   );
