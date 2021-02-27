@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-import Button from "./button";
 import { ReactComponent as Leaf } from "../assets/icons/leaf.svg";
 import PropTypes from "prop-types";
 import axios from "axios";

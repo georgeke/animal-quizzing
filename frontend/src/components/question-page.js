@@ -1,7 +1,6 @@
 import React, { useCallback, useState } from "react";
 
 import AudioAnswers from "./audio-answers";
-import Button from "./button";
 import ImageAnswers from "./image-answers";
 import PropTypes from "prop-types";
 import TextAnswers from "./text-answers";
@@ -120,7 +119,7 @@ const QuestionPage = ({
       <QuestionText>{questionText}</QuestionText>
       {answersComponent}
       <ButtonContainer>
-        <button className="button" onClick={onNext}>
+        <button className="button" onClick={onNext} disabled={buttonDisabled}>
           {isLoading ? "..." : "Next"}
         </button>
         {/* <Button disabled={buttonDisabled} onClick={onNext}>
