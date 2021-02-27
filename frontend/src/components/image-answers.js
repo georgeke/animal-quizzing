@@ -1,9 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
-
-import { ReactComponent as Leaf } from '../assets/icons/leaf.svg';
-
+import { ReactComponent as Leaf } from "../assets/icons/leaf.svg";
+import PropTypes from "prop-types";
+import React from "react";
+import styled from "styled-components";
 
 const AnswersContainer = styled.div`
   margin-top: 60px;
@@ -17,8 +15,7 @@ const AnswerContainer = styled.a`
   margin-top: 40px;
   align-items: center;
   background: white;
-  border: 1px #E462B0 solid;
-  border-radius: 3px;
+  border-radius: 0.75em;
   display: flex;
 `;
 
@@ -29,7 +26,7 @@ const ImageAnswer = styled.img`
 `;
 
 const IconContainer = styled.div`
-  opacity: ${(props) => props.active ? '1' : '0'};
+  opacity: ${(props) => (props.active ? "1" : "0")};
   transition: ease 200ms;
   align-self: flex-start;
   margin: 5px;
@@ -38,7 +35,6 @@ const IconContainer = styled.div`
     opacity: 1;
   }
 `;
-
 
 const ImageAnswers = ({ answerOptions, onAnswerClick, activeAnswer }) => (
   <AnswersContainer>
