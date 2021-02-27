@@ -30,7 +30,7 @@ const Homepage = ({ setAnswers, setQuestion }) => {
     setIsLoading(true);
     // TODO: replace with actual url
     axios
-      .post("https://localhost:5000/question", {
+      .post("https://animal-quizzing.herokuapp.com/question", {
         answers: [],
       })
       .then((response) => {
