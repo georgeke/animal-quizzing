@@ -11,6 +11,8 @@ const QuestionContainer = styled.div`
   max-width: 850px;
   margin-top: 100px;
   text-align: center;
+  margin-right: auto;
+  margin-left: auto;
 `;
 
 const QuestionText = styled.div`
