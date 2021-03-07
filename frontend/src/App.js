@@ -6,7 +6,7 @@ import QuestionPage from './components/question-page';
 import ResultPage from './components/result-page';
 
 const AppContainer = styled.div`
-  max-width: 850px;
+  max-width: 960px;
   min-width: 720px;
   margin-right: auto;
   margin-left: auto;

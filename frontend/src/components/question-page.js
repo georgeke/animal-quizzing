@@ -8,6 +8,7 @@ import axios from "axios";
 import styled from "@emotion/styled";
 
 const QuestionContainer = styled.div`
+  max-width: 850px;
   margin-top: 100px;
   text-align: center;
 `;
