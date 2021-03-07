@@ -18,7 +18,7 @@ const AnswerContainer = styled.a`
 `;
 
 const TextAnswer = styled.span`
-  font-size: 20px;
+  font-size: 17px;
   margin-left: 20px;
 `;
 
